@@ -1,18 +1,35 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+//import GlobalStyles from "./styles/GlobalStyles";
+import Header from "./components/Header";
 
-import GlobalStyles from "./styles/globalStyles"
-import Home from "./pages/Home"
+// Páginas
+import Home from "./pages/Home";
+import Planes from "./pages/Planes";
+import Nosotros from "./pages/Nosotros";
+import Cobertura from "./pages/Cobertura";
+import TrabajaConNosotros from "./pages/Trabajaconnosotros";
+import Contacto from "./pages/Contacto";
+import GlobalStyles from "./styles/globalStyles";
+
+
 
 function App() {
-  
-
   return (
     
-    <div>
-      <GlobalStyles/>
-      <Home/>
-      <h1>hola</h1>
-    </div>
-  )
+    <Router>
+        <GlobalStyles/>    
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/planes" element={<Planes />} />
+          <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/cobertura" element={<Cobertura />} />
+          <Route path="/trabaja-con-nosotros" element={<TrabajaConNosotros />} />
+          <Route path="/contacto" element={<Contacto />} />
+
+
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

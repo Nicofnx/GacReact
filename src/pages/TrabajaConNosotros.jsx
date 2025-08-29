@@ -1,9 +1,11 @@
 import React from "react";
+import Header from "../components/Header";
 
 const TrabajaConNosotros = () => {
   return (
-    <div style={{ padding: "2rem" }}>
-
+    <div>
+        <Header/>
+        <h2>Trabaja con Nosotros</h2>
     </div>
   );
 };

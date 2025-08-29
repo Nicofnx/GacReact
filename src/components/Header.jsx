@@ -1,6 +1,7 @@
 
 import gotaLogo from "../assets/logo-empresa-con nombre.png";
 import styled from 'styled-components';
+import { NavLink as RouterLink } from "react-router-dom";
 
 const HeaderContainer = styled.header`
   //max-width: 1280px;
@@ -33,55 +34,57 @@ const Nav = styled.li`
   align-items: center;
   gap: 20px;
 `;
-const NavLink = styled.a`
+export const NavLink = styled(RouterLink)`
+  color: #6EC5E7;
+  font-weight: 500;
   text-decoration: none;
-  color: #58c4e7;
-  font-size: 16px;
-  //font-family: ;
+  transition: color 0.2s;
 
   &:hover {
-    color: #00aaff;
+    color: #0077cc;
+  }
+
+  &.active {
+    color: #0077ff; /* estilo cuando está en la ruta activa */
   }
 `;
-const Buttom = styled.a`
-  background-color: #58c4e7;
-  text-decoration: none;
+export const Buttom = styled(RouterLink)`
+  background: #6EC5E7;
   color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 16px;
-  transition: 0.5s;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
 
   &:hover {
-    background-color: #3587cb;
+    background: #005fa3;
   }
-`
+`;
 const GotaLogo = styled.img`
     width: 140px;
     opacity: 0.8;
 `;
 
-function Header(){
-    return(
-        <HeaderContainer>
-            <ContainerBox>
-                <NavLink href="/">
-                    <Logo>
-                        <GotaLogo src={gotaLogo} alt="" />
-                    </Logo>
-                </NavLink>            
-                <Nav>
-                    <NavLink href="#cv">LIMPIEZA PROFESIONAL</NavLink>
-                    <NavLink href="#contacto">PLANES</NavLink>
-                    <NavLink href="#contacto">NOSOTROS</NavLink>
-                    <NavLink href="#contacto">COBERTURA</NavLink>
-                    <NavLink href="#contacto">TRABAJA CON NOSOTROS</NavLink>
-                    <Buttom href="#contacto">CONTACTO</Buttom>
-                </Nav>
-            </ContainerBox>
+function Header() {
+    return (
+      <HeaderContainer>
+        <ContainerBox>
+          <RouterLink to="/">
+            <Logo>
+              <GotaLogo src={gotaLogo} alt="Logo" />
+            </Logo>
+          </RouterLink>            
+          <Nav>
+            <NavLink to="/limpieza-profesional">LIMPIEZA PROFESIONAL</NavLink>
+            <NavLink to="/planes">PLANES</NavLink>
+            <NavLink to="/nosotros">NOSOTROS</NavLink>
+            <NavLink to="/cobertura">COBERTURA</NavLink>
+            <NavLink to="/trabaja-con-nosotros">TRABAJA CON NOSOTROS</NavLink>
+            <Buttom as={RouterLink} to="/contacto">CONTACTO</Buttom>
+          </Nav>
+        </ContainerBox>
       </HeaderContainer>
     )
-}
+  }
 
-export default Header
+  export default Header;

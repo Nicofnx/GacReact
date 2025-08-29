@@ -1,9 +1,6 @@
 
-import Cards from "./components/Cards"
-import Header from "./components/Header"
-import AboutSection from "./components/AboutSection"
-import VisualPresentation from "./components/VisualPresentation"
 import GlobalStyles from "./styles/globalStyles"
+import Home from "./pages/Home"
 
 function App() {
   
@@ -12,10 +9,7 @@ function App() {
     
     <div>
       <GlobalStyles/>
-      <Header/>
-      <VisualPresentation/>
-      <Cards/>
-      <AboutSection/>
+      <Home/>
       <h1>hola</h1>
     </div>
   )

@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-//import GlobalStyles from "./styles/GlobalStyles";
+
 import Header from "./components/Header";
 
 // Páginas
@@ -9,7 +9,7 @@ import Nosotros from "./pages/Nosotros";
 import Cobertura from "./pages/Cobertura";
 import TrabajaConNosotros from "./pages/TrabajaConNosotros";
 import Contacto from "./pages/Contacto";
-import GlobalStyles from "./styles/globalStyles";
+import GlobalStyles from "./styles/GlobalStyles";
 
 
 

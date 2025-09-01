@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Slide } from "react-awesome-reveal";
 
 const Section = styled.section`
   padding: 60px 20px;
@@ -57,45 +58,47 @@ function TipsBussine() {
     <Section>
       <Title>¡Somos expertos en limpieza para todo tipo de ambiente, incluido el tuyo!</Title>
       <CardGrid>
-        <Card>
-          <CardImage src="/img/satisfaccion.jpg" alt="Satisfacción Garantizada" />
-          <CardContent>
-            <CardTitle>Satisfacción Garantizada</CardTitle>
-            <CardText>
-              Aseguramos resultados óptimos y sumamente profesionales que superan todas tus expectativas.
-            </CardText>
-          </CardContent>
-        </Card>
+        <Slide triggerOnce={true} direction="up" cascade damping={0.4}>
+          <Card>
+            <CardImage src="/img/satisfaccion.jpg" alt="Satisfacción Garantizada" />
+            <CardContent>
+              <CardTitle>Satisfacción Garantizada</CardTitle>
+              <CardText>
+                Aseguramos resultados óptimos y sumamente profesionales que superan todas tus expectativas.
+              </CardText>
+            </CardContent>
+          </Card>
 
-        <Card>
-          <CardImage src="/img/atencion.jpg" alt="Atención Personalizada" />
-          <CardContent>
-            <CardTitle>Atención Personalizada</CardTitle>
-            <CardText>
-              Ofrecemos un trato directo y horarios flexibles, nos adaptamos a todas tus necesidades.
-            </CardText>
-          </CardContent>
-        </Card>
+          <Card>
+            <CardImage src="/img/atencion.jpg" alt="Atención Personalizada" />
+            <CardContent>
+              <CardTitle>Atención Personalizada</CardTitle>
+              <CardText>
+                Ofrecemos un trato directo y horarios flexibles, nos adaptamos a todas tus necesidades.
+              </CardText>
+            </CardContent>
+          </Card>
 
-        <Card>
-          <CardImage src="/img/personal.jpg" alt="Personal Capacitado" />
-          <CardContent>
-            <CardTitle>Personal Capacitado</CardTitle>
-            <CardText>
-              Profesionales altamente capacitados en diversas técnicas de limpieza para brindar un servicio de máxima calidad.
-            </CardText>
-          </CardContent>
-        </Card>
+          <Card>
+            <CardImage src="/img/personal.jpg" alt="Personal Capacitado" />
+            <CardContent>
+              <CardTitle>Personal Capacitado</CardTitle>
+              <CardText>
+                Profesionales altamente capacitados en diversas técnicas de limpieza para brindar un servicio de máxima calidad.
+              </CardText>
+            </CardContent>
+          </Card>
 
-        <Card>
-          <CardImage src="/img/presupuesto.jpg" alt="Presupuesto Personalizado" />
-          <CardContent>
-            <CardTitle>Presupuesto Personalizado</CardTitle>
-            <CardText>
-              Proveemos un servicio que se adapta a tus expectativas y necesidades.
-            </CardText>
-          </CardContent>
-        </Card>
+          <Card>
+            <CardImage src="/img/presupuesto.jpg" alt="Presupuesto Personalizado" />
+            <CardContent>
+              <CardTitle>Presupuesto Personalizado</CardTitle>
+              <CardText>
+                Proveemos un servicio que se adapta a tus expectativas y necesidades.
+              </CardText>
+            </CardContent>
+          </Card>
+        </Slide>
       </CardGrid>
     </Section>
   );

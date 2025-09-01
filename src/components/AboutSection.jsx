@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Gacman from "../assets/gac_man.png"
+import { Slide } from "react-awesome-reveal";
 
 // Contenedor general de la sección
 const Section = styled.section`
@@ -113,46 +114,50 @@ const AboutSection = () => {
   return (
     <Section>
       {/* Columna izquierda */}
-      <Left>
-        <img src={Gacman} alt="Limpieza profesional" />
-      </Left>
+      <Slide triggerOnce={true} direction="left">
+        <Left>
+          <img src={Gacman} alt="Limpieza profesional" />
+        </Left>
+      </Slide>
 
       {/* Columna derecha */}
-      <Right>
-        <Title>¿Qué es un servicio de limpieza profesional?</Title>
-        <Paragraph>
-          Un <b>servicio de limpieza profesional</b> consiste en realizar limpiezas meticulosas llevadas a cabo por profesionales capacitados en el área para limpiar, desinfectar e higienizar de manera adecuada. En Grupo Aldo Cleaning SRL, te aseguramos un servicio profesional mientras te garantizamos que tu espacio esté limpio y en buenas condiciones.
-        </Paragraph>
+      <Slide triggerOnce={true} direction="right">
+        <Right>
+          <Title>¿Qué es un servicio de limpieza profesional?</Title>
+          <Paragraph>
+            Un <b>servicio de limpieza profesional</b> consiste en realizar limpiezas meticulosas llevadas a cabo por profesionales capacitados en el área para limpiar, desinfectar e higienizar de manera adecuada. En Grupo Aldo Cleaning SRL, te aseguramos un servicio profesional mientras te garantizamos que tu espacio esté limpio y en buenas condiciones.
+          </Paragraph>
 
-        <SubTitle>¿Por qué elegirnos?</SubTitle>
-        <Paragraph>
-          Con más de <b>5 años de experiencia</b> en limpieza, hemos brindado nuestro servicio con profesionalismo y expertise en todo tipo de establecimientos:
-        </Paragraph>
+          <SubTitle>¿Por qué elegirnos?</SubTitle>
+          <Paragraph>
+            Con más de <b>5 años de experiencia</b> en limpieza, hemos brindado nuestro servicio con profesionalismo y expertise en todo tipo de establecimientos:
+          </Paragraph>
 
-        <ContainerList>
-            <List>
-              <li>Institucional</li>
-              <li>Hospitales, Sanatorios y Laboratorios</li>
-              <li>Industrial y Fábricas</li>
-              <li>Limpieza de Oficinas</li>
-              <li>Hotelería</li>
-              <li>Residencial y Consorcios</li>
-            </List>
-            <List>
-              <li>Restaurantes</li>
-              <li>Depósitos</li>
-              <li>Final de Eventos</li>
-              <li>Tratamiento de Pisos</li>
-              <li>Limpieza de Alfombras</li>
-              <li>Final de Obra</li>
-            </List>
-        </ContainerList>
+          <ContainerList>
+              <List>
+                <li>Institucional</li>
+                <li>Hospitales, Sanatorios y Laboratorios</li>
+                <li>Industrial y Fábricas</li>
+                <li>Limpieza de Oficinas</li>
+                <li>Hotelería</li>
+                <li>Residencial y Consorcios</li>
+              </List>
+              <List>
+                <li>Restaurantes</li>
+                <li>Depósitos</li>
+                <li>Final de Eventos</li>
+                <li>Tratamiento de Pisos</li>
+                <li>Limpieza de Alfombras</li>
+                <li>Final de Obra</li>
+              </List>
+          </ContainerList>
 
-        <ButtonsRow>
-          <Button href="tel:0232312341234">(02323) 1234-1234</Button>
-          <Button href="tel:0232345674567">(02323) 4567-4567</Button>
-        </ButtonsRow>
-      </Right>
+          <ButtonsRow>
+            <Button href="tel:0232312341234">(02323) 1234-1234</Button>
+            <Button href="tel:0232345674567">(02323) 4567-4567</Button>
+          </ButtonsRow>
+        </Right>
+      </Slide>
     </Section>
   );
 };

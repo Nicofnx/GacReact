@@ -6,6 +6,7 @@ import Shopping from "../assets/shopping.jpg"
 import Oficce from "../assets/office.webp"
 import Deposit from "../assets/depo.jpg"
 import Event from "../assets/event.webp"
+import { Fade } from "react-awesome-reveal";
 
 const Section = styled.section`
   background-color: #a3def5;
@@ -36,6 +37,7 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 450px;
 
   &:hover {
     transform: translateY(-6px);
@@ -45,7 +47,7 @@ const Card = styled.div`
 
 const CardImage = styled.img`
   width: 100%;
-  height: 180px;
+  height: 240px;
   object-fit: cover;
 `;
 
@@ -65,7 +67,7 @@ const CardTitle = styled.h3`
 const CardDescription = styled.p`
   font-size: 0.95rem;
   color: #555;
-  margin-bottom: 1.5rem;
+  //margin-bottom: 1.5rem;
   flex: 1;
 `;
 
@@ -124,16 +126,20 @@ const Cards = () => {
           Conoce los detalles de nuestros servicios y consultanos por tu necesidad!
         </TitleSeccionCards>
         <CardsContainer>
+        <Fade triggerOnce={true} cascade damping={0.2} >
             {data.map((item, index) => (
-                <Card key={index}>
-                    <CardImage src={item.img} alt={item.title} />
-                    <CardContent>
-                        <CardTitle>{item.title}</CardTitle>
-                        <CardDescription>{item.desc}</CardDescription>
-                        <CardButton>Más información</CardButton>
-                    </CardContent>
-                </Card>
-        ))}
+                
+                  <Card key={index}>
+                      <CardImage src={item.img} alt={item.title} />
+                      <CardContent>
+                          <CardTitle>{item.title}</CardTitle>
+                          <CardDescription>{item.desc}</CardDescription>
+                          <CardButton>Más información</CardButton>
+                      </CardContent>
+                  </Card>
+                
+            ))}
+        </Fade>
       </CardsContainer>
     </Section>
   );

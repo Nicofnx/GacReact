@@ -126,7 +126,7 @@ const Cards = () => {
           Conoce los detalles de nuestros servicios y consultanos por tu necesidad!
         </TitleSeccionCards>
         <CardsContainer>
-        <Fade triggerOnce={true} cascade damping={0.2} >
+        <Fade triggerOnce={true} cascade damping={0.3} >
             {data.map((item, index) => (
                 
                   <Card key={index}>

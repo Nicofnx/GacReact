@@ -17,7 +17,8 @@ function App() {
   return (
     
     <Router>
-        <GlobalStyles/>    
+        <GlobalStyles/>
+        <Header/>    
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/planes" element={<Planes />} />

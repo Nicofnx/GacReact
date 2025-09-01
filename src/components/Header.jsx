@@ -2,19 +2,32 @@
 import gotaLogo from "../assets/logo-empresa-con nombre.png";
 import styled from 'styled-components';
 import { NavLink as RouterLink } from "react-router-dom";
+import React, { useState, useEffect } from "react"
 
 const HeaderContainer = styled.header`
-  //max-width: 1280px;
+  position: ${props => (props.isFixed ? "sticky" : "static")};
+  top: ${props => (props.isFixed ? "0" : "auto")};
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease, visibility 0.5s ease;
+  transform: ${props =>
+    props.hidden ? "translateY(-100%)" : "translateY(0)"};
+  z-index: 1000;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  //padding: 10px 20px;
   background: #fff;
-  //background: linear-gradient(90deg,rgba(42, 123, 155, 0.53) 0%, rgba(87, 199, 133, 0.73) 100%);
+  box-shadow: ${props => (props.isFixed ? "0 2px 5px rgba(0, 0, 0, 0.1)" : "none")};
   
+  visibility: ${props => props.hidden ? 'hidden' : 'visible'};
+  opacity: ${props => props.hidden ? 0 : 1};
   
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 `;
+
 const ContainerBox = styled.div`
   width: 100%;
   max-width: 1280px;
@@ -61,13 +74,43 @@ export const Buttom = styled(RouterLink)`
   }
 `;
 const GotaLogo = styled.img`
-    width: 140px;
+    width: 80px;
     opacity: 0.8;
 `;
 
 function Header() {
+
+  const [hidden, setHidden] = useState(false);
+  const [isFixed, setIsFixed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+
+      if (currentScrollTop > 200 && currentScrollTop < 600) {
+        setHidden(true);
+      } else if (currentScrollTop >= 600) {
+        setHidden(false);
+        setIsFixed(true); // a partir de 600px, el header se vuelve fijo
+      } else {
+        setHidden(false);
+        setIsFixed(false); // antes de 600px, es estático
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+
+
+
     return (
-      <HeaderContainer>
+      <HeaderContainer hidden={hidden} isFixed={isFixed}>
         <ContainerBox>
           <RouterLink to="/">
             <Logo>

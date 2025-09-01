@@ -9,7 +9,7 @@ const Section = styled.section`
 const Title = styled.h2`
   font-size: 1.8rem;
   margin-bottom: 40px;
-  color: #0097a7;
+  color: #3586cb;
 `;
 
 const CardGrid = styled.div`

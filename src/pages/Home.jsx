@@ -8,7 +8,6 @@ import TipsBussine from "../components/TipsBussine";
 const Home = () => {
   return (
     <div >
-        <Header/>
         <VisualPresentation/>
         <Cards/>
         <AboutSection/>

@@ -39,7 +39,7 @@ const Right = styled.div`
 `;
 
 const Title = styled.h2`
-  color: #009999;
+  color: #3586cb;
   font-size: 1.8rem;
   margin-bottom: 1rem;
 `;
@@ -52,7 +52,7 @@ const Paragraph = styled.p`
 `;
 
 const SubTitle = styled.h3`
-  color: #009999;
+  color: #3586cb;
   font-size: 1.4rem;
   margin-bottom: 1rem;
 `;
@@ -96,7 +96,7 @@ const ButtonsRow = styled.div`
 `;
 
 const Button = styled.a`
-  background: #00a5a5;
+  background: #72c8e9;
   color: white;
   text-decoration: none;
   padding: 0.75rem 1.5rem;
@@ -105,7 +105,7 @@ const Button = styled.a`
   transition: background 0.3s ease;
 
   &:hover {
-    background: #008080;
+    background: #3586cb;
   }
 `;
 

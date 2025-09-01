@@ -8,10 +8,16 @@ import Deposit from "../assets/depo.jpg"
 import Event from "../assets/event.webp"
 
 const Section = styled.section`
-  background-color: #009999;
+  background-color: #a3def5;
   width: 100%; 
-  padding: 4rem 0;
+  padding: 2rem 0;
 `;
+
+const TitleSeccionCards = styled.h2`
+  padding: 0rem 0 2rem 0;
+  color: #fff;
+  font-size: 34px;
+`
 
 const CardsContainer = styled.div`
   display: grid;
@@ -64,7 +70,7 @@ const CardDescription = styled.p`
 `;
 
 const CardButton = styled.button`
-  background: #00a5a5;
+  background: #72c8e9;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -74,7 +80,7 @@ const CardButton = styled.button`
   transition: background 0.3s ease;
 
   &:hover {
-    background: #008080;
+    background: #3586cb;
   }
 `;
 
@@ -114,6 +120,9 @@ const Cards = () => {
 
   return (
     <Section>
+        <TitleSeccionCards>
+          Conoce los detalles de nuestros servicios y consultanos por tu necesidad!
+        </TitleSeccionCards>
         <CardsContainer>
             {data.map((item, index) => (
                 <Card key={index}>

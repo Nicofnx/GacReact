@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import Planes from "./pages/Planes";
 import Nosotros from "./pages/Nosotros";
 import Cobertura from "./pages/Cobertura";
-import TrabajaConNosotros from "./pages/Trabajaconnosotros";
+import TrabajaConNosotros from "./pages/TrabajaConNosotros";
 import Contacto from "./pages/Contacto";
 import GlobalStyles from "./styles/globalStyles";
 

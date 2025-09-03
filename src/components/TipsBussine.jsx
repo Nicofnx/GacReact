@@ -56,7 +56,7 @@ const CardText = styled.p`
 function TipsBussine() {
   return (
     <Section>
-      <Title>¿Buscás una empresa de limpieza en confiable, profesional y con amplia trayectoria?</Title>
+      <Title>¿Buscás una empresa de limpieza confiable, profesional y con amplia trayectoria?</Title>
       <Title>Grupo Aldo Cleaning SRL te brinda</Title>
       <CardGrid>
         <Slide triggerOnce={true} direction="up" cascade damping={0.4}>

@@ -10,8 +10,22 @@ import { Fade } from "react-awesome-reveal";
 
 const Section = styled.section`
   background-color: #a3def5;
-  width: 100%; 
+  width: 100%;
   padding: 2rem 0;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'><circle cx='75' cy='10' r='10' fill='rgba(255,255,255,0.3)'/><circle cx='120' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='90' cy='60' r='40' fill='rgba(255,255,255,0.3)'/><circle cx='120' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='160' cy='75' r='25' fill='rgba(255,255,255,0.3)'/><circle cx='200' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='220' cy='65' r='35' fill='rgba(255,255,255,0.3)'/><circle cx='270' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='300' cy='80' r='30' fill='rgba(255,255,255,0.3)'/><circle cx='340' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='370' cy='70' r='40' fill='rgba(255,255,255,0.3)'/><circle cx='400' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='450' cy='75' r='35' fill='rgba(255,255,255,0.3)'/><circle cx='490' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='520' cy='65' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='580' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='600' cy='80' r='30' fill='rgba(255,255,255,0.3)'/><circle cx='680' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='670' cy='70' r='40' fill='rgba(255,255,255,0.3)'/><circle cx='710' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='740' cy='75' r='35' fill='rgba(255,255,255,0.3)'/><circle cx='790' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='820' cy='65' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='870' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='900' cy='80' r='30' fill='rgba(255,255,255,0.3)'/><circle cx='940' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='980' cy='70' r='40' fill='rgba(255,255,255,0.3)'/><circle cx='1050' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='1060' cy='75' r='35' fill='rgba(255,255,255,0.3)'/><circle cx='1110' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='1140' cy='65' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='1180' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='1220' cy='80' r='30' fill='rgba(255,255,255,0.3)'/><circle cx='1270' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='1300' cy='70' r='40' fill='rgba(255,255,255,0.3)'/><circle cx='1350' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='1380' cy='75' r='35' fill='rgba(255,255,255,0.3)'/><circle cx='1500' cy='90' r='45' fill='rgba(255,255,255,0.3)'/></svg>") repeat-x;
+    background-size: cover;
+  }
 `;
 
 const TitleSeccionCards = styled.h2`
@@ -21,6 +35,8 @@ const TitleSeccionCards = styled.h2`
 `
 
 const CardsContainer = styled.div`
+  position: relative;
+  z-index:15;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
@@ -30,6 +46,7 @@ const CardsContainer = styled.div`
 `;
 
 const Card = styled.div`
+  z-index:20;
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);

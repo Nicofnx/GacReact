@@ -10,6 +10,7 @@ import Cobertura from "./pages/Cobertura";
 import TrabajaConNosotros from "./pages/TrabajaConNosotros";
 import Contacto from "./pages/Contacto";
 import GlobalStyles from "./styles/GlobalStyles";
+import Footer from "./components/Footer";
 
 
 
@@ -26,9 +27,8 @@ function App() {
           <Route path="/cobertura" element={<Cobertura />} />
           <Route path="/trabaja-con-nosotros" element={<TrabajaConNosotros />} />
           <Route path="/contacto" element={<Contacto />} />
-
-
-      </Routes>
+        </Routes>
+        <Footer/>
     </Router>
   );
 }

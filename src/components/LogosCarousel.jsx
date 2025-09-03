@@ -65,20 +65,22 @@ function Autoplay(slider) {
     const [sliderRef] = useKeenSlider(
       {
         loop: true,
-        renderMode: "performance",
+        renderMode: "precision",
         slides: { perView: 4, spacing: 10 },
-        animation: { duration: 2000, easing: t => t }
+        animation: { duration: 2000, easing: t => 1 + t }
       },
       [Autoplay] // 👈 se agrega el plugin
     )
 
   const logos = [    
-    "/logos_empresas_bn/mini_arroyo.jpeg",
-    "/logos_empresas_bn/mini_banco_nacion.jpg",
-    "/logos_empresas_bn/mini_cicilotto.jpg",
-    "/logos_empresas_bn/mini_dok.jpg",
-    "/logos_empresas_bn/mini_quento.jpg",
-    "/logos_empresas_bn/mini_sar.jpg"
+    "/logos_empresas_bn/mini_arroyo.png",
+    "/logos_empresas_bn/mini_banco_nacion.png",
+    "/logos_empresas_bn/mini_cicilotto.png",
+    "/logos_empresas_bn/mini_dok.png",
+    "/logos_empresas_bn/mini_quento.png",
+    "/logos_empresas_bn/mini_sar.png",
+    "/logos_empresas_bn/mini_lomas.png"
+
   ]
 
   return (

@@ -15,9 +15,9 @@ const Title = styled.h2`
 
 const CardGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 `;
 
@@ -56,7 +56,8 @@ const CardText = styled.p`
 function TipsBussine() {
   return (
     <Section>
-      <Title>¡Somos expertos en limpieza para todo tipo de ambiente, incluido el tuyo!</Title>
+      <Title>¿Buscás una empresa de limpieza en confiable, profesional y con amplia trayectoria?</Title>
+      <Title>Grupo Aldo Cleaning SRL te brinda</Title>
       <CardGrid>
         <Slide triggerOnce={true} direction="up" cascade damping={0.4}>
           <Card>
@@ -95,6 +96,15 @@ function TipsBussine() {
               <CardTitle>Presupuesto Personalizado</CardTitle>
               <CardText>
                 Proveemos un servicio que se adapta a tus expectativas y necesidades.
+              </CardText>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardImage src="/img/presupuesto.jpg" alt="Presupuesto Personalizado" />
+            <CardContent>
+              <CardTitle>Costos</CardTitle>
+              <CardText>
+                reducimos tus costos operativos.
               </CardText>
             </CardContent>
           </Card>

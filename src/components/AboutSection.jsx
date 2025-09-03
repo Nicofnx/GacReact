@@ -16,6 +16,7 @@ const Section = styled.section`
   @media (max-width: 768px) {
     grid-template-columns: 1fr; /* en mobile se apila */
     text-align: center;
+    padding: 1rem 0;
   }
 `;
 

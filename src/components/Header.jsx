@@ -6,18 +6,24 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { IoCloseCircleOutline } from "react-icons/io5";
 
 const HeaderContainer = styled.header`
-  position: ${(props) => (props.isFixed ? "sticky" : "static")};
-  top: ${(props) => (props.isFixed ? "0" : "auto")};
+  position: ${props => (props.isFixed ? "sticky" : "static")};
+  top: 0;
   width: 100%;
+  color: white;
   padding: 5px 0;
-  background: #fff;
-  box-shadow: ${(props) =>
-    props.isFixed ? "0 2px 5px rgba(0, 0, 0, 0.1)" : "none"};
+  text-align: center;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease, visibility 0.5s ease;
-  transform: ${(props) => (props.hidden ? "translateY(-100%)" : "translateY(0)")};
-  visibility: ${(props) => (props.hidden ? "hidden" : "visible")};
-  opacity: ${(props) => (props.hidden ? 0 : 1)};
+  transform: ${props =>
+    props.hidden ? "translateY(-100%)" : "translateY(0)"};
   z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  box-shadow: ${props => (props.isFixed ? "0 2px 5px rgba(0, 0, 0, 0.1)" : "none")};
+  
+  visibility: ${props => props.hidden ? 'hidden' : 'visible'};
+  opacity: ${props => props.hidden ? 0 : 1};
 `;
 
 const ContainerBox = styled.div`
@@ -60,7 +66,7 @@ export const NavLink = styled(RouterLink)`
   }
 `;
 
-export const Button = styled(RouterLink)`
+export const Buttom = styled(RouterLink)`
   background: #6ec5e7;
   color: #fff;
   padding: 0.5rem 1rem;
@@ -120,8 +126,26 @@ function Header() {
   const [hidden, setHidden] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) {
+      // en mobile siempre fijo y visible
+      setIsFixed(true);
+      setHidden(false);
+      return;
+    }
+
     const handleScroll = () => {
       const currentScrollTop =
         window.pageYOffset || document.documentElement.scrollTop;
@@ -138,26 +162,27 @@ function Header() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isMobile]);
 
   return (
     <HeaderContainer hidden={hidden} isFixed={isFixed}>
       <ContainerBox>
-        <RouterLink to="/">
+      <RouterLink to="/">
           <Logo>
             <GotaLogo src={gotaLogo} alt="Logo" />
           </Logo>
-        </RouterLink>
-
-        {/* Menú Desktop */}
+        </RouterLink>            
         <Nav>
           <NavLink to="/limpieza-profesional">LIMPIEZA PROFESIONAL</NavLink>
           <NavLink to="/planes">PLANES</NavLink>
           <NavLink to="/nosotros">NOSOTROS</NavLink>
           <NavLink to="/cobertura">COBERTURA</NavLink>
           <NavLink to="/trabaja-con-nosotros">TRABAJA CON NOSOTROS</NavLink>
-          <Button to="/contacto">CONTACTO</Button>
+          <Buttom  to="/contacto">CONTACTO</Buttom>
         </Nav>
 
         {/* Burger Menu */}
@@ -183,9 +208,9 @@ function Header() {
         <NavLink to="/trabaja-con-nosotros" onClick={() => setMenuOpen(false)}>
           TRABAJA CON NOSOTROS
         </NavLink>
-        <Button to="/contacto" onClick={() => setMenuOpen(false)}>
+        <Buttom to="/contacto" onClick={() => setMenuOpen(false)}>
           CONTACTO
-        </Button>
+        </Buttom>
         <Close>
           <IoCloseCircleOutline to="/contacto" onClick={() => setMenuOpen(false)}>          
           </IoCloseCircleOutline>

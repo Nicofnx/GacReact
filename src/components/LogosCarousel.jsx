@@ -22,6 +22,7 @@ const CarouselWrapper = styled.div`
 `
 
 const Title = styled.h2`
+  padding: 2rem 1rem 0 1rem;
   font-size: 36px;
   font-weight: bold;
   text-align: center;

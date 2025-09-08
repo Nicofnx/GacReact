@@ -1,5 +1,10 @@
 import styled from "styled-components";
 import { Slide } from "react-awesome-reveal";
+import Satisfaccion from "../assets/tips/satisfaccion.png"
+import Atencion from "../assets/tips/atencion.png"
+import Personal from "../assets/tips/personal.png"
+import Presupuesto from "../assets/tips/presupuesto.png"
+import Costo from "../assets/tips/costo.png"
 
 const Section = styled.section`
   padding: 60px 20px;
@@ -9,7 +14,7 @@ const Section = styled.section`
 
 const Title = styled.h2`
   font-size: 1.8rem;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   color: #3586cb;
 `;
 
@@ -35,7 +40,7 @@ const Card = styled.div`
 
 const CardImage = styled.img`
   width: 100%;
-  height: 180px;
+  height: 240px;
   object-fit: cover;
 `;
 
@@ -61,7 +66,7 @@ function TipsBussine() {
       <CardGrid>
         <Slide triggerOnce={true} direction="up" cascade damping={0.4}>
           <Card>
-            <CardImage src="/img/satisfaccion.jpg" alt="Satisfacción Garantizada" />
+            <CardImage src={Satisfaccion} alt="Satisfacción Garantizada" />
             <CardContent>
               <CardTitle>Satisfacción Garantizada</CardTitle>
               <CardText>
@@ -71,7 +76,7 @@ function TipsBussine() {
           </Card>
 
           <Card>
-            <CardImage src="/img/atencion.jpg" alt="Atención Personalizada" />
+            <CardImage src={Atencion} alt="Atención Personalizada" />
             <CardContent>
               <CardTitle>Atención Personalizada</CardTitle>
               <CardText>
@@ -81,7 +86,7 @@ function TipsBussine() {
           </Card>
 
           <Card>
-            <CardImage src="/img/personal.jpg" alt="Personal Capacitado" />
+            <CardImage src={Personal} alt="Personal Capacitado" />
             <CardContent>
               <CardTitle>Personal Capacitado</CardTitle>
               <CardText>
@@ -91,7 +96,7 @@ function TipsBussine() {
           </Card>
 
           <Card>
-            <CardImage src="/img/presupuesto.jpg" alt="Presupuesto Personalizado" />
+            <CardImage src={Presupuesto} alt="Presupuesto Personalizado" />
             <CardContent>
               <CardTitle>Presupuesto Personalizado</CardTitle>
               <CardText>
@@ -100,11 +105,11 @@ function TipsBussine() {
             </CardContent>
           </Card>
           <Card>
-            <CardImage src="/img/presupuesto.jpg" alt="Presupuesto Personalizado" />
+            <CardImage src={Costo} alt="Presupuesto Personalizado" />
             <CardContent>
-              <CardTitle>Costos</CardTitle>
+              <CardTitle>Menores costos</CardTitle>
               <CardText>
-                reducimos tus costos operativos.
+                Resolvemos la gestion de limpieza reduciendo tus costos operativos.
               </CardText>
             </CardContent>
           </Card>

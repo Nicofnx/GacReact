@@ -7,6 +7,9 @@ import Oficce from "../assets/office.webp"
 import Deposit from "../assets/depo.jpg"
 import Event from "../assets/event.webp"
 import { Fade } from "react-awesome-reveal";
+import { Link } from "react-router-dom";
+
+
 
 const Section = styled.section`
   background-color: #a3def5;
@@ -23,8 +26,6 @@ const Section = styled.section`
     bottom: 0;
     width: 100%;
     height: 100px;
-    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'><circle cx='75' cy='10' r='10' fill='rgba(255,255,255,0.3)'/><circle cx='120' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='90' cy='60' r='40' fill='rgba(255,255,255,0.3)'/><circle cx='120' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='160' cy='75' r='25' fill='rgba(255,255,255,0.3)'/><circle cx='200' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='220' cy='65' r='35' fill='rgba(255,255,255,0.3)'/><circle cx='270' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='300' cy='80' r='30' fill='rgba(255,255,255,0.3)'/><circle cx='340' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='370' cy='70' r='40' fill='rgba(255,255,255,0.3)'/><circle cx='400' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='450' cy='75' r='35' fill='rgba(255,255,255,0.3)'/><circle cx='490' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='520' cy='65' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='580' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='600' cy='80' r='30' fill='rgba(255,255,255,0.3)'/><circle cx='680' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='670' cy='70' r='40' fill='rgba(255,255,255,0.3)'/><circle cx='710' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='740' cy='75' r='35' fill='rgba(255,255,255,0.3)'/><circle cx='790' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='820' cy='65' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='870' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='900' cy='80' r='30' fill='rgba(255,255,255,0.3)'/><circle cx='940' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='980' cy='70' r='40' fill='rgba(255,255,255,0.3)'/><circle cx='1050' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='1060' cy='75' r='35' fill='rgba(255,255,255,0.3)'/><circle cx='1110' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='1140' cy='65' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='1180' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='1220' cy='80' r='30' fill='rgba(255,255,255,0.3)'/><circle cx='1270' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='1300' cy='70' r='40' fill='rgba(255,255,255,0.3)'/><circle cx='1350' cy='90' r='45' fill='rgba(255,255,255,0.3)'/><circle cx='1380' cy='75' r='35' fill='rgba(255,255,255,0.3)'/><circle cx='1500' cy='90' r='45' fill='rgba(255,255,255,0.3)'/></svg>") repeat-x;
-    background-size: cover;
   }
 `;
 
@@ -106,56 +107,62 @@ const CardButton = styled.button`
 const Cards = () => {
   const data = [
     {
-        img: ObraEnd,
-        title: "Final de obra",
-        desc: "Garantizamos satisfacción y eficacia para la limpieza."
+      img: ObraEnd,
+      title: "Final de obra",
+      desc: "Garantizamos satisfacción y eficacia para la limpieza.",
+      path: "/finaldeobra",
     },
     {
-        img: Industry,
-        title: "Industrias y fábricas",
-        desc: "Ofrecemos un servicio personalizado para tu establecimiento."
+      img: Industry,
+      title: "Industrias y fábricas",
+      desc: "Ofrecemos un servicio personalizado para tu establecimiento.",
+      path: "/industrias",
     },
     {
-        img: Shopping,
-        title: "Establecimientos comerciales y retail",
-        desc: "Seguridad y limpieza integral y continua del local en manos de profesionales."
+      img: Shopping,
+      title: "Establecimientos comerciales y retail",
+      desc: "Seguridad y limpieza integral y continua del local en manos de profesionales.",
+      path: "/comercios",
     },
     {
-        img: Oficce,
-        title: "Limpieza de oficinas",
-        desc: "Garantizamos satisfacción y eficacia para la limpieza."
-    },
-     {
-        img: Deposit,
-        title: "Depositos",
-        desc: "Garantizamos satisfacción y eficacia para la limpieza."
+      img: Oficce,
+      title: "Limpieza de oficinas",
+      desc: "Garantizamos satisfacción y eficacia para la limpieza.",
+      path: "/oficinas",
     },
     {
-        img: Event,
-        title: "Final de eventos",
-        desc: "Garantizamos satisfacción y eficacia para la limpieza."
-    }
+      img: Deposit,
+      title: "Depósitos",
+      desc: "Garantizamos satisfacción y eficacia para la limpieza.",
+      path: "/depositos",
+    },
+    {
+      img: Event,
+      title: "Final de eventos",
+      desc: "Garantizamos satisfacción y eficacia para la limpieza.",
+      path: "/eventos",
+    },
   ];
 
   return (
     <Section>
-        <TitleSeccionCards>
-          Conoce los detalles de nuestros servicios y consultanos por tu necesidad!
-        </TitleSeccionCards>
-        <CardsContainer>
-        <Fade triggerOnce={true} cascade damping={0.3} >
-            {data.map((item, index) => (
-                
-                  <Card key={index}>
-                      <CardImage src={item.img} alt={item.title} />
-                      <CardContent>
-                          <CardTitle>{item.title}</CardTitle>
-                          <CardDescription>{item.desc}</CardDescription>
-                          <CardButton>Más información</CardButton>
-                      </CardContent>
-                  </Card>
-                
-            ))}
+      <TitleSeccionCards>
+        Conoce los detalles de nuestros servicios y consultanos por tu necesidad!
+      </TitleSeccionCards>
+      <CardsContainer>
+        <Fade triggerOnce={true} cascade damping={0.3}>
+          {data.map((item, index) => (
+            <Card key={index}>
+              <CardImage src={item.img} alt={item.title} />
+              <CardContent>
+                <CardTitle>{item.title}</CardTitle>
+                <CardDescription>{item.desc}</CardDescription>
+                <Link to={item.path}>
+                  <CardButton>Más información</CardButton>
+                </Link>
+              </CardContent>
+            </Card>
+          ))}
         </Fade>
       </CardsContainer>
     </Section>

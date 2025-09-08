@@ -11,6 +11,7 @@ import TrabajaConNosotros from "./pages/TrabajaConNosotros";
 import Contacto from "./pages/Contacto";
 import GlobalStyles from "./styles/GlobalStyles";
 import Footer from "./components/Footer";
+import FinalDeObra from "./pages/FinalDeObra";
 
 
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/cobertura" element={<Cobertura />} />
           <Route path="/trabaja-con-nosotros" element={<TrabajaConNosotros />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/finaldeobra" element={<FinalDeObra />} />
         </Routes>
         <Footer/>
     </Router>

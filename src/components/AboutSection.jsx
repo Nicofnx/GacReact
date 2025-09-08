@@ -38,6 +38,11 @@ const Right = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    padding: 1rem
+  }
+
 `;
 
 const Title = styled.h2`
@@ -62,6 +67,7 @@ const SubTitle = styled.h3`
 const ContainerList = styled.div`
   display: flex;
   justify-content: center;
+  text-align: left;
 `
 
 const List = styled.ul`

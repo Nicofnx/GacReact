@@ -42,10 +42,16 @@ const CardImage = styled.img`
   width: 100%;
   height: 240px;
   object-fit: cover;
+
+  @media (max-width: 768px){
+    height: 180px;
+    object-fit: contain;
+  }
 `;
 
 const CardContent = styled.div`
   padding: 20px;
+  position: ;
 `;
 
 const CardTitle = styled.h3`

@@ -12,13 +12,29 @@ import Contacto from "./pages/Contacto";
 import GlobalStyles from "./styles/GlobalStyles";
 import Footer from "./components/Footer";
 import FinalDeObra from "./pages/FinalDeObra";
-
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 
 function App() {
+
+
+
+  function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // 👈 vuelve al inicio
+  }, [pathname]);
+
+  return null;
+}
+
+
   return (
     
     <Router>
+        <ScrollToTop />
         <GlobalStyles/>
         <Header/>    
         <Routes>

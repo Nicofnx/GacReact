@@ -130,9 +130,9 @@ const AboutSection = () => {
       {/* Columna derecha */}
       <Slide triggerOnce={true} direction="right">
         <Right>
-          <Title>¿Qué es un servicio de limpieza profesional?</Title>
+          <Title>Un servicio de limpieza profesional es mucho más que “limpiar”</Title>
           <Paragraph>
-            Un <b>servicio de limpieza profesional</b> consiste en realizar limpiezas meticulosas llevadas a cabo por profesionales capacitados en el área para limpiar, desinfectar e higienizar de manera adecuada. En Grupo Aldo Cleaning SRL, te aseguramos un servicio profesional mientras te garantizamos que tu espacio esté limpio y en buenas condiciones.
+          Significa estudiar cada espacio, entender las necesidades del cliente y adaptarse a sus tiempos. En <b>Grupo Aldo Cleaning SRL</b> planificamos la mejor estrategia para cada lugar, eligiendo los insumos adecuados según las superficies y organizando cada detalle con profesionalismo.
           </Paragraph>
 
           <SubTitle>¿Por qué elegirnos?</SubTitle>
@@ -160,8 +160,7 @@ const AboutSection = () => {
           </ContainerList>
 
           <ButtonsRow>
-            <Button href="tel:0232312341234">(02323) 1234-1234</Button>
-            <Button href="tel:0232345674567">(02323) 4567-4567</Button>
+            <Button href="tel:0232312341234">Solicita tu cotizacion</Button>
           </ButtonsRow>
         </Right>
       </Slide>

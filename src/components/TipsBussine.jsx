@@ -13,10 +13,16 @@ const Section = styled.section`
 `;
 
 const Title = styled.h2`
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   margin-bottom: 20px;
   color: #3586cb;
 `;
+
+const Subtitle = styled.h3`
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #3586cb;
+`
 
 const CardGrid = styled.div`
   display: grid;
@@ -51,7 +57,7 @@ const CardImage = styled.img`
 
 const CardContent = styled.div`
   padding: 20px;
-  position: ;
+  
 `;
 
 const CardTitle = styled.h3`
@@ -67,8 +73,8 @@ const CardText = styled.p`
 function TipsBussine() {
   return (
     <Section>
-      <Title>¿Buscás una empresa de limpieza confiable, profesional y con amplia trayectoria?</Title>
-      <Title>Grupo Aldo Cleaning SRL te brinda</Title>
+      <Title>Tu lugar, siempre impecable</Title>
+      <Subtitle>En Grupo Aldo Cleaning nos ocupamos de cada detalle, vos disfrutás los resultados.</Subtitle>
       <CardGrid>
         <Slide triggerOnce={true} direction="up" cascade damping={0.4}>
           <Card>
@@ -76,7 +82,7 @@ function TipsBussine() {
             <CardContent>
               <CardTitle>Satisfacción Garantizada</CardTitle>
               <CardText>
-                Aseguramos resultados óptimos y sumamente profesionales que superan todas tus expectativas.
+              Resultados de calidad que superan tus expectativas.
               </CardText>
             </CardContent>
           </Card>
@@ -86,7 +92,7 @@ function TipsBussine() {
             <CardContent>
               <CardTitle>Atención Personalizada</CardTitle>
               <CardText>
-                Ofrecemos un trato directo y horarios flexibles, nos adaptamos a todas tus necesidades.
+                Un trato cercano, ágil y adaptado a lo que necesitas.
               </CardText>
             </CardContent>
           </Card>
@@ -94,9 +100,9 @@ function TipsBussine() {
           <Card>
             <CardImage src={Personal} alt="Personal Capacitado" />
             <CardContent>
-              <CardTitle>Personal Capacitado</CardTitle>
+              <CardTitle>Equipo Profesional</CardTitle>
               <CardText>
-                Profesionales altamente capacitados en diversas técnicas de limpieza para brindar un servicio de máxima calidad.
+                Personas confiables y capacitadas. 
               </CardText>
             </CardContent>
           </Card>
@@ -104,9 +110,9 @@ function TipsBussine() {
           <Card>
             <CardImage src={Presupuesto} alt="Presupuesto Personalizado" />
             <CardContent>
-              <CardTitle>Presupuesto Personalizado</CardTitle>
+              <CardTitle>Presupuesto a medida</CardTitle>
               <CardText>
-                Proveemos un servicio que se adapta a tus expectativas y necesidades.
+                Soluciones que se ajustan a las necesidades de tu empresa.
               </CardText>
             </CardContent>
           </Card>
@@ -115,7 +121,7 @@ function TipsBussine() {
             <CardContent>
               <CardTitle>Menores costos</CardTitle>
               <CardText>
-                Resolvemos la gestion de limpieza reduciendo tus costos operativos.
+                Optimizamos la limpieza reduciendo tus gastos.
               </CardText>
             </CardContent>
           </Card>

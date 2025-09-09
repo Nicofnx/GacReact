@@ -53,69 +53,54 @@ const List = styled.ul`
   line-height: 1.6;
 `
 
+const CheckList = styled.ul`
+  margin-top: 10px;
+  padding-left: 20px;
+  list-style: "✔ ";
+  color: #444;
+  line-height: 1.6;
+`
+
 // --- Componente principal ---
 function FinalDeObra() {
   return (
     <PageWrapper>
       <Image src={finalObraImg} alt="Limpieza de final de obra" />
       <Content>
-        <Title>LIMPIEZA DE FINAL DE OBRA</Title>
+        <Title>Limpieza de final de obra</Title>
 
-        <SubTitle>¿Qué es un servicio de limpieza de final de obra?</SubTitle>
         <Text>
-          La <b>limpieza de final de obra</b> es un servicio que se ofrece con el fin de 
-          eliminar todo tipo de suciedad que se obtiene durante y después de una 
-          reforma. Esta suciedad y polvo que se acumula suele ser compleja de quitar 
-          si no se cuenta con un equipo de profesionales que se dediquen 
-          exclusivamente a removerlo a la perfección.
+          ¿Terminaste una obra, reforma o ampliación? Sabemos que el polvo y la
+          suciedad parecen interminables. En <b>Grupo Aldo Cleaning SRL</b> nos
+          especializamos en dejar cada superficie libre de residuos, con
+          ambientes listos para usar y disfrutar.
         </Text>
 
-        <SubTitle>¡Que la limpieza de final de obra no sea una preocupación!</SubTitle>
-        <Text>
-          Luego de una renovación o una construcción desde cero, uno puede notar 
-          una película de tierra y polvo cubriendo las superficies y que parece 
-          imposible de remover. Para nosotros, esto no es problema: nuestros 
-          equipos están altamente capacitados para abordar estas necesidades tan 
-          específicas.
-        </Text>
-        <Text>
-          Nos enfocamos en remover a la perfección toda capa de suciedad con la 
-          que cuenta el ambiente, dejando el lugar en perfectas condiciones y con 
-          un aroma agradable.
-        </Text>
-
-        <SubTitle>Podemos con la limpieza de todas las superficies</SubTitle>
-        <Text>
-          Prestamos servicio de limpieza profesional e integral para distintos 
-          tipos de trabajo de obra, entre ellos:
-        </Text>
+        <SubTitle>¿Qué hacemos?</SubTitle>
         <List>
-          <li>Remodelaciones de propiedades particulares e instituciones.</li>
-          <li>Ampliaciones.</li>
-          <li>Construcciones desde los cimientos.</li>
+          <li>Remoción profunda de polvo, cemento y restos de materiales.</li>
+          <li>Limpieza de pisos, vidrios, aberturas y mobiliario.</li>
+          <li>Desinfección y desodorización de los espacios.</li>
         </List>
 
         <SubTitle>
-          ¿Qué beneficios diferenciales tiene contratar un servicio de limpieza profesional?
+          Beneficios de elegir un servicio de limpieza profesional
         </SubTitle>
         <Text>
-          Contratar profesionales para llevar a cabo limpiezas te ahorra una 
-          preocupación mientras nos encargamos de dejar tu lugar espléndido, listo 
-          para utilizar y disfrutar.
+          Al contratarnos, evitás el desgaste físico y el tiempo que implica
+          limpiar después de una obra. Nos encargamos de todo para que tu espacio
+          quede listo, prolijo y presentable.
         </Text>
-        <Text>
-          A su vez, cuenta con los siguientes beneficios:
-        </Text>
-        <List>
-          <li>Nuestra atención es personalizada.</li>
-          <li>Los horarios y presupuestos se adaptan a tus necesidades y a tu bolsillo.</li>
-          <li>Nuestros equipos cuentan con capacitaciones constantes para brindar el mejor servicio de limpieza.</li>
-          <li>Nuestros supervisores se encargan de hacer un trabajo continuo para asegurar el buen rendimiento de cada equipo.</li>
-          <li>Contamos con planes estandarizados Limpiar + Proteger si necesitás una limpieza integral.</li>
-        </List>
+        <CheckList>
+          <li>Atención personalizada y cercana.</li>
+          <li>Horarios y presupuestos según tus necesidades.</li>
+          <li>Equipos capacitados y en constante actualización.</li>
+          <li>Supervisión continua para garantizar calidad y eficiencia.</li>
+        </CheckList>
       </Content>
     </PageWrapper>
   )
 }
 
 export default FinalDeObra
+

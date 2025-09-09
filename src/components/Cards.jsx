@@ -104,50 +104,50 @@ const CardButton = styled.button`
   }
 `;
 
-const Cards = () => {
-  const data = [
-    {
-      img: ObraEnd,
-      title: "Final de obra",
-      desc: "Garantizamos satisfacción y eficacia para la limpieza.",
-      path: "/finaldeobra",
-    },
-    {
-      img: Industry,
-      title: "Industrias y fábricas",
-      desc: "Ofrecemos un servicio personalizado para tu establecimiento.",
-      path: "/industrias",
-    },
-    {
-      img: Shopping,
-      title: "Establecimientos comerciales y retail",
-      desc: "Seguridad y limpieza integral y continua del local en manos de profesionales.",
-      path: "/comercios",
-    },
-    {
-      img: Oficce,
-      title: "Limpieza de oficinas",
-      desc: "Garantizamos satisfacción y eficacia para la limpieza.",
-      path: "/oficinas",
-    },
-    {
-      img: Deposit,
-      title: "Depósitos",
-      desc: "Garantizamos satisfacción y eficacia para la limpieza.",
-      path: "/depositos",
-    },
-    {
-      img: Event,
-      title: "Final de eventos",
-      desc: "Garantizamos satisfacción y eficacia para la limpieza.",
-      path: "/eventos",
-    },
-  ];
+const data = [
+  {
+    img: ObraEnd,
+    title: "Final de obras",
+    desc: "Dejamos tu obra lista para usar, con espacios ordenados y prolijos.",
+    path: "/finaldeobra",
+  },
+  {
+    img: Industry,
+    title: "Industrias y fábricas",
+    desc: "Limpieza confiable, lista para cumplir y superar auditorías.",
+    path: "/limpiezaindustrial",
+  },
+  {
+    img: Shopping,
+    title: "Establecimientos comerciales",
+    desc: "Presentación cuidada y espacios ordenados que suman valor a tu negocio.",
+    path: "/comercios",
+  },
+  {
+    img: Oficce,
+    title: "Oficinas",
+    desc: "Ambientes limpios y cuidados para un entorno laboral cómodo y productivo.",
+    path: "/oficinas",
+  },
+  {
+    img: Deposit,
+    title: "Depósitos",
+    desc: "Espacios organizados para proteger tu mercadería y optimizar tu operación.",
+    path: "/depositos",
+  },
+  {
+    img: Event,
+    title: "Final de eventos",
+    desc: ": Devolvemos el orden y la higiene a tus espacios, para que solo quede el buen recuerdo.",
+    path: "/eventos",
+  },
+];
 
+const Cards = () => {
   return (
     <Section>
       <TitleSeccionCards>
-        Conoce los detalles de nuestros servicios y consultanos por tu necesidad!
+        Descubrí todo lo que podemos hacer por tu empresa:
       </TitleSeccionCards>
       <CardsContainer>
         <Fade triggerOnce={true} cascade damping={0.3}>

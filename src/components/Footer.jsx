@@ -86,8 +86,7 @@ function Footer() {
         <Column>
           <Logo src={gotaLogo} alt="Logo" />
           <Text>
-            Empresa de servicios de limpieza profesional. Comprometidos con la
-            calidad y la satisfacción de nuestros clientes.
+            <b>Servicio de limpieza profesional.</b><br/>Resultados que se ven, tranquilidad que disfrutás.
           </Text>
         </Column>
 

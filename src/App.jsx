@@ -14,6 +14,11 @@ import Footer from "./components/Footer";
 import FinalDeObra from "./pages/FinalDeObra";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import LimpiezaIndustrial from "./pages/LimpiezaIndustrial";
+import LimpiezaComercial from "./pages/Comercios";
+import LimpiezaOficinas from "./pages/LimpiezaOficinas";
+import LimpiezaDepositos from "./pages/LimpiezaDepositos";
+import LimpiezaEventos from "./pages/LimpiezaEventos";
 
 
 function App() {
@@ -45,6 +50,11 @@ function App() {
           <Route path="/trabaja-con-nosotros" element={<TrabajaConNosotros />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/finaldeobra" element={<FinalDeObra />} />
+          <Route path="/limpiezaindustrial" element={<LimpiezaIndustrial />} />
+          <Route path="/comercios" element={<LimpiezaComercial />} />
+          <Route path="/oficinas" element={<LimpiezaOficinas />} />
+          <Route path="/depositos" element={<LimpiezaDepositos />} />
+          <Route path="/eventos" element={<LimpiezaEventos />} />
         </Routes>
         <Footer/>
     </Router>

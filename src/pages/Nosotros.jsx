@@ -169,8 +169,7 @@ const Nosotros = () => {
             </List>
           </ContainerList>
           <ButtonsRow>
-            <Button href="tel:0232312341234">(02323) 1234-1234</Button>
-            <Button href="tel:0232345674567">(02323) 4567-4567</Button>
+            <Button href="tel:0232312341234">Contactanos</Button>
           </ButtonsRow>
       </Section1colum>
     </>

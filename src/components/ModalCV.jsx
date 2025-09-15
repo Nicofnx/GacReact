@@ -13,15 +13,18 @@ const Overlay = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 999;
+  padding: 15px; /* margen en mobile */
 `
 
 // --- Modal ---
 const ModalContainer = styled.div`
   background: #fff;
-  padding: 30px;
+  padding: 25px;
   border-radius: 8px;
   width: 400px;
-  max-width: 90%;
+  max-width: 100%;
+  max-height: 95vh;
+  overflow-y: auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
@@ -38,6 +41,12 @@ const ModalContainer = styled.div`
       transform: translateY(0);
     }
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    border-radius: 0; /* ocupa toda la pantalla */
+    padding: 20px;
+  }
 `
 
 const Title = styled.h2`
@@ -45,6 +54,10 @@ const Title = styled.h2`
   margin-bottom: 10px;
   font-size: 22px;
   text-align: center;
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
 `
 
 const Label = styled.label`
@@ -97,6 +110,11 @@ const Button = styled.button`
   &:hover {
     background: #007bbd;
   }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    padding: 10px;
+  }
 `
 
 // --- Componente Modal ---
@@ -129,9 +147,9 @@ function ModalCV({ onClose }) {
 
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
-      onClose(); // solo si se hace click en el fondo
+      onClose() // solo si se hace click en el fondo
     }
-  };
+  }
 
   return (
     <Overlay onClick={handleOverlayClick}>
@@ -203,8 +221,13 @@ function ModalCV({ onClose }) {
           />
 
           <Label>Subí tu CV</Label>
-          <FileInput type="file" name="cv" accept=".pdf,.doc,.docx" onChange={handleChange} />
-           
+          <FileInput
+            type="file"
+            name="cv"
+            accept=".pdf,.doc,.docx"
+            onChange={handleChange}
+          />
+
           <Button type="submit">ENVIAR</Button>
         </form>
       </ModalContainer>

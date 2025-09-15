@@ -4,6 +4,14 @@ import styled from "styled-components";
 const Section = styled.section`
   background-color: #f9f9f9;
   padding: 60px 20px;
+
+  @media (max-width: 768px) {
+    padding: 40px 15px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 30px 10px;
+  }
 `;
 
 const Container = styled.div`
@@ -15,6 +23,7 @@ const Container = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
 `;
 
@@ -24,22 +33,39 @@ const ContactInfo = styled.div`
     font-weight: 700;
     color: #008cba;
     margin-bottom: 20px;
+    text-align: left;
+
+    @media (max-width: 768px) {
+      font-size: 24px;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 20px;
+    }
   }
 
   p {
     margin-bottom: 15px;
     line-height: 1.5;
+
     strong {
       font-weight: 600;
       display: block;
       margin-bottom: 5px;
     }
+
     a {
       color: #0077cc;
       text-decoration: none;
       &:hover {
         text-decoration: underline;
       }
+    }
+
+    @media (max-width: 768px) {
+      text-align: center;
+      font-size: 14px;
     }
   }
 `;
@@ -52,6 +78,15 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 15px;
+    gap: 10px;
+  }
 `;
 
 const Row = styled.div`
@@ -60,6 +95,11 @@ const Row = styled.div`
 
   input {
     flex: 1;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
   }
 `;
 
@@ -73,6 +113,11 @@ const Input = styled.input`
   &:focus {
     border-color: #008cba;
   }
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+    padding: 10px;
+  }
 `;
 
 const Select = styled.select`
@@ -84,6 +129,11 @@ const Select = styled.select`
 
   &:focus {
     border-color: #008cba;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+    padding: 10px;
   }
 `;
 
@@ -97,6 +147,11 @@ const Textarea = styled.textarea`
 
   &:focus {
     border-color: #008cba;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+    padding: 10px;
   }
 `;
 
@@ -113,6 +168,11 @@ const Button = styled.button`
 
   &:hover {
     background: #0077a3;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    padding: 10px;
   }
 `;
 
@@ -149,7 +209,10 @@ const Contacto = () => {
           <h2>¡CONTACTATE CON NOSOTROS!</h2>
           <p>
             <strong>Nuestro correo:</strong>
-            <a href="mailto:administracion@gacsrl.com.ar">administracion@gacsrl.com.ar</a><br/>
+            <a href="mailto:administracion@gacsrl.com.ar">
+              administracion@gacsrl.com.ar
+            </a>
+            <br />
             <a href="mailto:rrhh@gacsrl.com.ar">rrhh@gacsrl.com.ar</a>
           </p>
           <p>

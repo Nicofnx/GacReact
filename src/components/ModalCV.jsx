@@ -12,7 +12,7 @@ const Overlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 1200;
   padding: 15px; /* margen en mobile */
 `
 
@@ -46,6 +46,7 @@ const ModalContainer = styled.div`
     width: 100%;
     border-radius: 0; /* ocupa toda la pantalla */
     padding: 20px;
+    z-index: 1500;
   }
 `
 

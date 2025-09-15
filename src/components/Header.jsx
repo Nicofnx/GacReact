@@ -4,6 +4,7 @@ import { NavLink as RouterLink } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { IoCloseCircleOutline } from "react-icons/io5";
+import ModalCV from "./ModalCV";
 
 const HeaderContainer = styled.header`
   position: ${props => (props.isFixed ? "sticky" : "static")};
@@ -128,6 +129,7 @@ function Header() {
   const [isFixed, setIsFixed] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
@@ -170,7 +172,9 @@ function Header() {
   }, [isMobile]);
 
   return (
+    <>
     <HeaderContainer hidden={hidden} isFixed={isFixed}>
+
       <ContainerBox>
       <RouterLink to="/">
           <Logo>
@@ -182,7 +186,10 @@ function Header() {
           <NavLink to="/planes">PLANES</NavLink>
           <NavLink to="/nosotros">NOSOTROS</NavLink>
           <NavLink to="/cobertura">COBERTURA</NavLink>
-          <NavLink to="/trabaja-con-nosotros">TRABAJA CON NOSOTROS</NavLink>
+          <span style={{cursor:"pointer", color:"#6ec5e7", fontWeight:"500"}} 
+            onClick={() => setIsModalOpen(true)}>
+            TRABAJA CON NOSOTROS
+          </span>
           <Buttom  to="/contacto">CONTACTO</Buttom>
         </Nav>
 
@@ -206,9 +213,11 @@ function Header() {
         <NavLink to="/cobertura" onClick={() => setMenuOpen(false)}>
           COBERTURA
         </NavLink>
-        <NavLink to="/trabaja-con-nosotros" onClick={() => setMenuOpen(false)}>
-          TRABAJA CON NOSOTROS
-        </NavLink>
+        <span 
+          style={{cursor:"pointer", color:"#6ec5e7", fontWeight:"500"}} 
+          onClick={() => { setIsModalOpen(true); setMenuOpen(false) }}
+          >TRABAJA CON NOSOTROS
+        </span>
         <Buttom to="/contacto" onClick={() => setMenuOpen(false)}>
           CONTACTO
         </Buttom>
@@ -217,7 +226,11 @@ function Header() {
           </IoCloseCircleOutline>
         </Close>
       </MobileMenu>
+
     </HeaderContainer>
+    {/* Modal */}
+    {isModalOpen && <ModalCV onClose={() => setIsModalOpen(false)} />}
+    </>
   );
 }
 

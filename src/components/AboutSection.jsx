@@ -160,7 +160,7 @@ const AboutSection = () => {
           </ContainerList>
 
           <ButtonsRow>
-            <Button href="tel:0232312341234">Solicita tu cotizacion</Button>
+            <Button href="tel:0232312341234">Solicitá tu cotización</Button>
           </ButtonsRow>
         </Right>
       </Slide>

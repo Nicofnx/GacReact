@@ -150,7 +150,7 @@ const Cards = () => {
         Descubrí todo lo que podemos hacer por tu empresa:
       </TitleSeccionCards>
       <CardsContainer>
-        <Fade triggerOnce={true} cascade damping={0.3}>
+        <Fade triggerOnce={true} cascade damping={0.1}>
           {data.map((item, index) => (
             <Card key={index}>
               <CardImage src={item.img} alt={item.title} />

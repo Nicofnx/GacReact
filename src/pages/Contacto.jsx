@@ -33,7 +33,7 @@ const ContactInfo = styled.div`
     font-weight: 700;
     color: #008cba;
     margin-bottom: 20px;
-    text-align: left;
+    text-align: center;
 
     @media (max-width: 768px) {
       font-size: 24px;

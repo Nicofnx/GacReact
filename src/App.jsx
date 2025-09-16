@@ -12,13 +12,14 @@ import Contacto from "./pages/Contacto";
 import GlobalStyles from "./styles/GlobalStyles";
 import Footer from "./components/Footer";
 import FinalDeObra from "./pages/FinalDeObra";
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import LimpiezaIndustrial from "./pages/LimpiezaIndustrial";
 import LimpiezaComercial from "./pages/Comercios";
 import LimpiezaOficinas from "./pages/LimpiezaOficinas";
 import LimpiezaDepositos from "./pages/LimpiezaDepositos";
 import LimpiezaEventos from "./pages/LimpiezaEventos";
+
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 
 function App() {

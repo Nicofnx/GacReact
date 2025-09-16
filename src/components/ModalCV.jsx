@@ -1,22 +1,30 @@
-import React, { useState } from "react"
-import styled from "styled-components"
+import React, { useState } from "react";
+import styled, { keyframes, css } from "styled-components";
+import CloseButtom from "./CloseButtom";
 
-// --- Overlay ---
+const fadeIn = keyframes`
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+`;
+
+const fadeOut = keyframes`
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-20px); }
+`;
+
 const Overlay = styled.div`
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: rgba(0, 0, 0, 0.6);
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 1200;
-  padding: 15px; /* margen en mobile */
-`
+  justify-content: center;
+  z-index: 1500;
+  opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
+  visibility: ${({ isOpen }) => (isOpen ? "visible" : "hidden")};
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+`;
 
-// --- Modal ---
 const ModalContainer = styled.div`
   background: #fff;
   padding: 25px;
@@ -29,51 +37,33 @@ const ModalContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
-  animation: fadeIn 0.3s ease;
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-    border-radius: 4px;
-    padding: 20px;
-    z-index: 1500;
-  }
-`
+  animation: ${({ isClosing }) =>
+    isClosing
+      ? css`${fadeOut} 0.5s forwards`
+      : css`${fadeIn} 0.5s forwards`};
+`;
 
 const Title = styled.h2`
   color: #009fe3;
   margin-bottom: 10px;
   font-size: 22px;
   text-align: center;
-
-  @media (max-width: 480px) {
-    font-size: 18px;
-  }
-`
-
-const Label = styled.label`
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 5px;
-`
+`;
 
 const Input = styled.input`
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
   width: 100%;
+`;
+
+const Label = styled.label`
   font-size: 14px;
-`
+  font-weight: 500;
+  color: #333;
+  margin-top: 10px;
+  display: block;
+`;
 
 const Select = styled.select`
   padding: 10px;
@@ -81,21 +71,21 @@ const Select = styled.select`
   border-radius: 5px;
   width: 100%;
   font-size: 14px;
-`
+`;
 
 const TextArea = styled.textarea`
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
   width: 100%;
-  resize: none;
   font-size: 14px;
-`
+  resize: none;
+`;
 
 const FileInput = styled.input`
-  padding: 5px;
+  margin-top: 5px;
   font-size: 14px;
-`
+`;
 
 const Button = styled.button`
   background: #009fe3;
@@ -111,15 +101,14 @@ const Button = styled.button`
   &:hover {
     background: #007bbd;
   }
-
-  @media (max-width: 480px) {
-    font-size: 14px;
-    padding: 10px;
-  }
-`
+`;
 
 // --- Componente Modal ---
-function ModalCV({ onClose }) {
+function ModalCV({ isOpen, onClose }) {
+  const [isClosing, setIsClosing] = useState(false)
+
+
+
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
@@ -143,19 +132,27 @@ function ModalCV({ onClose }) {
     e.preventDefault()
     console.log("Formulario enviado:", formData)
     alert("¡Datos enviados con éxito!")
-    onClose()
+    handleClose()
   }
 
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
-      onClose() // solo si se hace click en el fondo
+      handleClose()
     }
   }
 
+  const handleClose = () => {
+    setIsClosing(true)
+    setTimeout(() => {
+      onClose()
+    }, 500) // igual al tiempo del fadeOut
+  }
+
   return (
-    <Overlay onClick={handleOverlayClick}>
-      <ModalContainer>
+    <Overlay isOpen={isOpen} onClick={handleOverlayClick}>
+      <ModalContainer isClosing={isClosing} onClick={(e) => e.stopPropagation()}>
         <Title>Trabajá con nosotros</Title>
+        <CloseButtom onClick={handleClose} />
         <form onSubmit={handleSubmit}>
           <Label>Nombre y Apellido</Label>
           <Input

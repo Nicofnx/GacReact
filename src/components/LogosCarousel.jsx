@@ -42,19 +42,19 @@ const Slide = styled.div`
 `
 
 const Logo = styled.img`
-  height: 120px;
+  height: 140px;
   object-fit: contain;
 
   @media (max-width: 1024px) {
-    height: 100px;
+    height: 140px;
   }
 
   @media (max-width: 768px) {
-    height: 80px;
+    height: 130px;
   }
 
   @media (max-width: 480px) {
-    height: 60px;
+    height: 120px;
   }
 `
 

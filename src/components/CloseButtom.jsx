@@ -1,21 +1,27 @@
 import styled from "styled-components";
 
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Close = styled.div`
   position: absolute;
-  top: 0;
-  right:0;
-  font-size: 36px;
+  top: 8px;
+  right:8px;
+  font-size: 28px;
   cursor: pointer;
-  color: #005fa3;
+  color: #009fe3;
+  transition: color 0.5s ease;
+
+  &:hover {
+    color: #005fa3
+  }
 `
 
 function CloseButtom ({to, onClick}) {
     return(
         <Close>
-          <IoCloseCircleOutline to={to} onClick={onClick}>          
-          </IoCloseCircleOutline>
+          <FaTimes to={to} onClick={onClick}>          
+          </FaTimes>
         </Close>
     )
 }

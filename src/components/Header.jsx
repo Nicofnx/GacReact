@@ -114,6 +114,7 @@ const MobileMenu = styled.div`
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
   transition: right 0.3s ease-in-out;
   padding: 20px;
+  border-radius: 5px;
   flex-direction: column;
   gap: 20px;
   z-index: 2000;

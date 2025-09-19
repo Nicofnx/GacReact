@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import FondoChica from "../assets/Chica de Limpieza.png"
+import { Slide } from 'react-awesome-reveal';
 
 const Container = styled.div`
   width: 100%;
@@ -90,8 +91,10 @@ function VisualPresentation() {
   return (
     <Container>
       <BoxText>
-        <Text1>EMPRESA DE LIMPIEZA</Text1>
-        <Text2>PROFESIONAL</Text2>
+        <Slide triggerOnce={true} direction="left" cascade damping={0.2}>
+          <Text1>EMPRESA DE LIMPIEZA</Text1>
+          <Text2>PROFESIONAL</Text2>
+        </Slide>
       </BoxText>
     </Container>
   )

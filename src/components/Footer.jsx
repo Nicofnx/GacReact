@@ -102,7 +102,7 @@ function Footer() {
             <FaEnvelope /> info@empresa.com
           </ContactItem>
           <ContactItem>
-            <FaMapMarkerAlt /> CABA, Argentina
+            <FaMapMarkerAlt /> Luján, Bs As, Argentina
           </ContactItem>
         </Column>
 

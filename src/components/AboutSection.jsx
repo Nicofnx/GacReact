@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Gacman from "../assets/gac_man.png"
 import { Slide } from "react-awesome-reveal";
+import { NavLink as RouterLink } from "react-router-dom";
 
 // Contenedor general de la sección
 const Section = styled.section`
@@ -34,6 +35,12 @@ const Left = styled.div`
 `;
 
 // Columna de la derecha (contenido)
+
+const SectionRight = styled.div`
+  display: flex;
+  height: 100%;
+`
+
 const Right = styled.div`
   display: flex;
   flex-direction: column;
@@ -92,6 +99,8 @@ const List = styled.ul`
   }
 `;
 
+
+
 const ButtonsRow = styled.div`
   display: flex;
   gap: 1rem;
@@ -103,7 +112,7 @@ const ButtonsRow = styled.div`
   }
 `;
 
-const Button = styled.a`
+const Button = styled(RouterLink)`
   background: #72c8e9;
   color: white;
   text-decoration: none;
@@ -129,40 +138,42 @@ const AboutSection = () => {
 
       {/* Columna derecha */}
       <Slide triggerOnce={true} direction="right">
-        <Right>
-          <Title>Un servicio de limpieza profesional es mucho más que “limpiar”</Title>
-          <Paragraph>
-          Significa estudiar cada espacio, entender las necesidades del cliente y adaptarse a sus tiempos. En <b>Grupo Aldo Cleaning SRL</b> planificamos la mejor estrategia para cada lugar, eligiendo los insumos adecuados según las superficies y organizando cada detalle con profesionalismo.
-          </Paragraph>
+        <SectionRight>
+          <Right>
+            <Title>Un servicio de limpieza profesional es mucho más que “limpiar”</Title>
+            <Paragraph>
+            Significa estudiar cada espacio, entender las necesidades del cliente y adaptarse a sus tiempos. En <b>Grupo Aldo Cleaning SRL</b> planificamos la mejor estrategia para cada lugar, eligiendo los insumos adecuados según las superficies y organizando cada detalle con profesionalismo.
+            </Paragraph>
 
-          <SubTitle>¿Por qué elegirnos?</SubTitle>
-          <Paragraph>
-            Con más de <b>5 años de experiencia</b> en limpieza, hemos brindado nuestro servicio con profesionalismo y expertise en todo tipo de establecimientos:
-          </Paragraph>
+            {/*<SubTitle>¿Por qué elegirnos?</SubTitle> 
+            <Paragraph>
+              Con más de <b>5 años de experiencia</b> en limpieza, hemos brindado nuestro servicio con profesionalismo y expertise en todo tipo de establecimientos:
+            </Paragraph>
 
-          <ContainerList>
-              <List>
-                <li>Institucional</li>
-                <li>Hospitales, Sanatorios y Laboratorios</li>
-                <li>Industrial y Fábricas</li>
-                <li>Limpieza de Oficinas</li>
-                <li>Hotelería</li>
-                <li>Residencial y Consorcios</li>
-              </List>
-              <List>
-                <li>Restaurantes</li>
-                <li>Depósitos</li>
-                <li>Final de Eventos</li>
-                <li>Tratamiento de Pisos</li>
-                <li>Limpieza de Alfombras</li>
-                <li>Final de Obra</li>
-              </List>
-          </ContainerList>
+              <ContainerList>
+                <List>
+                  <li>Institucional</li>
+                  <li>Hospitales, Sanatorios y Laboratorios</li>
+                  <li>Industrial y Fábricas</li>
+                  <li>Limpieza de Oficinas</li>
+                  <li>Hotelería</li>
+                  <li>Residencial y Consorcios</li>
+                </List>
+                <List>
+                  <li>Restaurantes</li>
+                  <li>Depósitos</li>
+                  <li>Final de Eventos</li>
+                  <li>Tratamiento de Pisos</li>
+                  <li>Limpieza de Alfombras</li>
+                  <li>Final de Obra</li>
+                </List>
+              </ContainerList>*/}
 
-          <ButtonsRow>
-            <Button href="tel:0232312341234">Solicitá tu cotización</Button>
-          </ButtonsRow>
-        </Right>
+            <ButtonsRow>
+              <Button to="/contacto">Solicitá tu cotización</Button>
+            </ButtonsRow>
+          </Right>
+        </SectionRight>
       </Slide>
     </Section>
   );

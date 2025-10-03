@@ -1,9 +1,30 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import FondoChica from "../assets/Chica de Limpieza.png"
 
 const Section = styled.section`
+  position: relative;
   background-color: #f9f9f9;
   padding: 60px 20px;
+  overflow: hidden; /* asegura que el pseudo no se escape */
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(${FondoChica});
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    opacity: 0.1; /* 10% */
+    z-index: 0;
+  }
+
+  /* Aseguramos que el contenido esté arriba */
+  > * {
+    position: relative;
+    z-index: 1;
+  }
 
   @media (max-width: 768px) {
     padding: 40px 15px;
@@ -20,6 +41,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
+  
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -32,7 +54,7 @@ const ContactInfo = styled.div`
     font-size: 28px;
     font-weight: 700;
     color: #008cba;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     text-align: center;
 
     @media (max-width: 768px) {
@@ -46,7 +68,7 @@ const ContactInfo = styled.div`
   }
 
   p {
-    margin-bottom: 15px;
+    margin-bottom: 35px;
     line-height: 1.5;
 
     strong {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled, { keyframes, css } from "styled-components";
 import CloseButtom from "./CloseButtom";
+import { Upload } from "lucide-react";
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(-20px); }
@@ -82,9 +83,42 @@ const TextArea = styled.textarea`
   resize: none;
 `;
 
-const FileInput = styled.input`
-  margin-top: 5px;
+const HiddenFileInput = styled.input`
+  display: none;
+`;
+
+const FileDrop = styled.label`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 15px;
+  border: 2px dashed #009fe3;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  color: #009fe3;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
   font-size: 14px;
+
+  &:hover {
+    background-color: #009fe3;
+    color: #fff;
+  }
+
+  svg {
+    width: 32px;
+    height: 32px;
+  }
+`;
+
+const FileName = styled.p`
+  margin-top: 8px;
+  font-size: 14px;
+  color: #555;
 `;
 
 const Button = styled.button`
@@ -96,7 +130,8 @@ const Button = styled.button`
   padding: 12px;
   cursor: pointer;
   font-size: 16px;
-  margin-top: 10px;
+  margin: 10px;
+  transition: all 0.3s ease;
 
   &:hover {
     background: #007bbd;
@@ -219,12 +254,21 @@ function ModalCV({ isOpen, onClose }) {
           />
 
           <Label>Subí tu CV</Label>
-          <FileInput
+
+          <FileDrop htmlFor="cv">
+            <Upload />
+            <span>Arrastrá tu archivo o hacé clic aquí</span>
+          </FileDrop>
+
+          <HiddenFileInput
+            id="cv"
             type="file"
             name="cv"
             accept=".pdf,.doc,.docx"
             onChange={handleChange}
           />
+
+          {formData.cv && <FileName>{formData.cv.name}</FileName>}
 
           <Button type="submit">ENVIAR</Button>
         </form>

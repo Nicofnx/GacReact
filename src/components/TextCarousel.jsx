@@ -18,7 +18,7 @@ const CarouselWrapper = styled.div`
   overflow: hidden;
   white-space: nowrap;
   position: relative;
-  height: 50px;
+  height: 30px;
 
   background: linear-gradient(270deg, #c8efff, #4fbae4);
   background-size: 200% 200%;
@@ -36,13 +36,13 @@ const CarouselTrack = styled.div`
 const CarouselGroup = styled.div`
   display: inline-flex;
   color: #fff;
-  font-weight: 600;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 16px;
 
   span {
     margin: 0 30px;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
     color: #fff;
     white-space: nowrap;
   }

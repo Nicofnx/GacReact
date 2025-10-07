@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Gacman from "../assets/gac_man.png"
-import { Slide } from "react-awesome-reveal";
+
 import { NavLink as RouterLink } from "react-router-dom";
 
 // Contenedor general de la sección
@@ -65,40 +65,6 @@ const Paragraph = styled.p`
   line-height: 1.6;
 `;
 
-const SubTitle = styled.h3`
-  color: #3586cb;
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-`;
-
-const ContainerList = styled.div`
-  display: flex;
-  justify-content: center;
-  text-align: left;
-`
-
-const List = styled.ul`
-  display: flex;  
-  flex-direction: column;
-  justify-content:flex-start;
-  align-items: flex-start;
-  list-style: none;
-  padding: 0;
-  margin: 0 0 2rem 0;
-
-  li {
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    color: #333;
-
-    &::before {
-      content: "🔹​";
-      margin-right: 0.5rem;
-      color: #009999;
-    }
-  }
-`;
-
 
 
 const ButtonsRow = styled.div`
@@ -130,14 +96,14 @@ const AboutSection = () => {
   return (
     <Section>
       {/* Columna izquierda */}
-      <Slide triggerOnce={true} direction="left">
+      
         <Left>
           <img src={Gacman} alt="Limpieza profesional" />
         </Left>
-      </Slide>
+      
 
       {/* Columna derecha */}
-      <Slide triggerOnce={true} direction="right">
+      
         <SectionRight>
           <Right>
             <Title>Un servicio de limpieza profesional es mucho más que “limpiar”</Title>
@@ -174,7 +140,7 @@ const AboutSection = () => {
             </ButtonsRow>
           </Right>
         </SectionRight>
-      </Slide>
+      
     </Section>
   );
 };

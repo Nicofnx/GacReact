@@ -1,27 +1,27 @@
 import gotaLogo from "../assets/logo-empresa-con nombre.png";
 import styled from "styled-components";
 import { NavLink as RouterLink } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import ModalCV from "./ModalCV";
 import CloseButtom from "./CloseButtom";
 
 const HeaderContainer = styled.header`
-  position: ${(props) => (props.isFixed ? "sticky" : "static")};
+  position: fixed;
   top: 0;
   width: 100%;
   color: white;
   padding: 5px 0;
   text-align: center;
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease, visibility 0.5s ease;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
   transform: ${(props) => (props.hidden ? "translateY(-100%)" : "translateY(0)")};
   z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #fff;
-  box-shadow: ${(props) => (props.isFixed ? "0 2px 5px rgba(0, 0, 0, 0.1)" : "none")};
-  visibility: ${(props) => (props.hidden ? "hidden" : "visible")};
+  box-shadow: ${(props) =>
+    props.scrolled ? "0 2px 8px rgba(0, 0, 0, 0.15)" : "none"};
   opacity: ${(props) => (props.hidden ? 0 : 1)};
 `;
 
@@ -122,42 +122,37 @@ const MobileMenu = styled.div`
 
 function Header() {
   const [hidden, setHidden] = useState(false);
-  const [isFixed, setIsFixed] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const lastScroll = useRef(0);
+
+
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
-    if (isMobile) {
-      setIsFixed(true);
-      setHidden(false);
-      return;
-    }
     const handleScroll = () => {
-      const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      if (currentScrollTop > 200 && currentScrollTop < 600) {
-        setHidden(true);
-      } else if (currentScrollTop >= 600) {
+      const currentScroll = window.scrollY;
+      const scrollDown = currentScroll > lastScroll.current;
+
+      // Aparece arriba siempre si no se scrolleó mucho
+      if (currentScroll < 100) {
         setHidden(false);
-        setIsFixed(true);
+        setScrolled(false);
       } else {
-        setHidden(false);
-        setIsFixed(false);
+        setScrolled(true);
+        setHidden(scrollDown);
       }
+
+      lastScroll.current = currentScroll;
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isMobile]);
+  }, []);
 
   return (
     <>
-      <HeaderContainer hidden={hidden} isFixed={isFixed}>
+      <HeaderContainer hidden={hidden} scrolled={scrolled}>
         <ContainerBox>
           <RouterLink to="/">
             <Logo>
@@ -169,7 +164,9 @@ function Header() {
             <NavLink to="/planes">PLANES</NavLink>
             <NavLink to="/nosotros">NOSOTROS</NavLink>
             <NavLink to="/cobertura">COBERTURA</NavLink>
-            <LinkModal onClick={() => setIsModalOpen(true)}>TRABAJA CON NOSOTROS</LinkModal>
+            <LinkModal onClick={() => setIsModalOpen(true)}>
+              TRABAJA CON NOSOTROS
+            </LinkModal>
             <Buttom to="/contacto">CONTACTO</Buttom>
           </Nav>
           <Burger onClick={() => setMenuOpen(!menuOpen)}>
@@ -204,7 +201,6 @@ function Header() {
         </MobileMenu>
       </HeaderContainer>
 
-      {/* Modal */}
       {isModalOpen && (
         <ModalCV onClose={() => setIsModalOpen(false)} isOpen={isModalOpen} />
       )}

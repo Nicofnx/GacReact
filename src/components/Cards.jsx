@@ -137,8 +137,8 @@ const data = [
   },
   {
     img: Event,
-    title: "Final de eventos",
-    desc: ": Devolvemos el orden y la higiene a tus espacios, para que solo quede el buen recuerdo.",
+    title: "Eventos",
+    desc: "Aseguramos el orden y la higiene a tus espacios, para que solo quede el buen recuerdo.",
     path: "/eventos",
   },
 ];

@@ -5,6 +5,7 @@ import AboutSection from "../components/AboutSection";
 import TipsBussine from "../components/TipsBussine";
 import LogosCarousel from "../components/LogosCarousel";
 import TextCarousel from "../components/TextCarousel";
+import FAQSection from "../components/FAQSection";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
         <Cards/>
         <LogosCarousel/>
         <AboutSection/>
+        <FAQSection/>
     </div>
   );
 };

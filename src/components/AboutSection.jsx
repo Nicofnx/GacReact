@@ -11,7 +11,7 @@ const Section = styled.section`
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
 
   @media (max-width: 768px) {
@@ -96,11 +96,7 @@ const AboutSection = () => {
   return (
     <Section>
       {/* Columna izquierda */}
-      
-        <Left>
-          <img src={Gacman} alt="Limpieza profesional" />
-        </Left>
-      
+    
 
       {/* Columna derecha */}
       
@@ -140,6 +136,10 @@ const AboutSection = () => {
             </ButtonsRow>
           </Right>
         </SectionRight>
+              
+       {/* <Left>
+          <img src={Gacman} alt="Limpieza profesional" />
+        </Left>*/}
       
     </Section>
   );

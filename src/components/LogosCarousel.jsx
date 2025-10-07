@@ -2,6 +2,14 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 import styled from "styled-components";
 
+
+const Container = styled.div`
+  margin: auto;
+  background: "#f5f5f5";
+  padding: "40px 0";
+  max-width: 1200px;
+`
+
 const Logo = styled.img`
   height: 140px;
   margin: 0 40px;
@@ -33,7 +41,7 @@ const LogosCarousel = () => {
   ];
 
   return (
-    <div style={{ background: "#f5f5f5", padding: "40px 0" }}>
+    <Container>
       <Title>Clientes que confían en nosotros</Title>
       <Marquee
         gradient={false}
@@ -44,7 +52,7 @@ const LogosCarousel = () => {
           <Logo key={i} src={logo} alt={`logo-${i}`} />
         ))}
       </Marquee>
-    </div>
+    </Container>
   );
 };
 

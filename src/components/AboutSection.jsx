@@ -97,6 +97,14 @@ const Button = styled(RouterLink)`
 `;
 
 const AboutSection = () => {
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <Section>
       {/* Columna izquierda */}
@@ -137,7 +145,7 @@ const AboutSection = () => {
 
             <ButtonsRow>
               <Button
-              to="/cotizaciones">SOLICITA TU COTIZACIÓN
+              onClick={() => scrollToSection("cotizaciones")}>SOLICITA TU COTIZACIÓN
                 <ArrowBigDownDash
                 size={48}
                 absoluteStrokeWidth={true}

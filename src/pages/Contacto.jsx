@@ -5,8 +5,8 @@ import FondoChica from "../assets/Chica de Limpieza.png"
 const Section = styled.section`
   position: relative;
   background-color: #f9f9f9;
-  padding: 60px 20px;
-  overflow: hidden; /* asegura que el pseudo no se escape */
+  padding: 250px 20px;
+  overflow: hidden;
 
   &::before {
     content: "";
@@ -20,7 +20,6 @@ const Section = styled.section`
     z-index: 0;
   }
 
-  /* Aseguramos que el contenido esté arriba */
   > * {
     position: relative;
     z-index: 1;

@@ -18,7 +18,7 @@ const Section1colum = styled.section`
 
 const Section2Colums = styled.section`
   width: 100%;
-  padding: 4rem 2rem;
+  padding: 200px 1rem 100px 1rem;
   max-width: 1200px;
   margin: 0 auto;
   display: grid;

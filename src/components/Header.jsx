@@ -5,6 +5,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import ModalCV from "./ModalCV";
 import CloseButtom from "./CloseButtom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const HeaderContainer = styled.header`
   position: fixed;
@@ -133,12 +134,26 @@ const MobileMenu = styled.div`
 `;
 
 function Header() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const lastScroll = useRef(0);
 
+  const handleCotizacionesClick = (e) => {
+    e.preventDefault();
+    if (location.pathname === "/") {
+      // Ya estás en la home → solo scrollear
+      const section = document.getElementById("cotizaciones");
+      if (section) section.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Si estás en otra página → guardar destino y navegar
+      localStorage.setItem("scrollToSection", "cotizaciones");
+      navigate("/");
+    }
+  };
 
 
   useEffect(() => {
@@ -180,7 +195,7 @@ function Header() {
           </RouterLink>
           <Nav>
             
-            <ScrollLink onClick={() => scrollToSection("cotizaciones")}>
+            <ScrollLink as="a" href="#cotizaciones" onClick={handleCotizacionesClick}>
               COTIZACIONES
             </ScrollLink>
             <NavLink to="/nosotros">NOSOTROS</NavLink>
@@ -196,8 +211,10 @@ function Header() {
         </ContainerBox>
         <MobileMenu open={menuOpen}>
           <ScrollLink
-            onClick={() => {
-              scrollToSection("cotizaciones");
+            as="a"
+            href="#cotizaciones"
+            onClick={(e) => {
+              handleCotizacionesClick(e);
               setMenuOpen(false);
             }}
           >

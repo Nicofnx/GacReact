@@ -161,7 +161,7 @@ function Header() {
           </RouterLink>
           <Nav>
             <NavLink to="/limpieza-profesional">LIMPIEZA PROFESIONAL</NavLink>
-            <NavLink to="/planes">PLANES</NavLink>
+            <NavLink to="/planes">COTIZACIONES</NavLink>
             <NavLink to="/nosotros">NOSOTROS</NavLink>
             <NavLink to="/cobertura">COBERTURA</NavLink>
             <LinkModal onClick={() => setIsModalOpen(true)}>

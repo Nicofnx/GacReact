@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Gacman from "../assets/gac_man.png"
+import { ArrowBigDownDash } from "lucide-react";
 
 import { NavLink as RouterLink } from "react-router-dom";
 
@@ -79,6 +80,9 @@ const ButtonsRow = styled.div`
 `;
 
 const Button = styled(RouterLink)`
+  display:flex;
+  flex-direction: column;
+  align-items:center;
   background: #72c8e9;
   color: white;
   text-decoration: none;
@@ -132,7 +136,13 @@ const AboutSection = () => {
               </ContainerList>*/}
 
             <ButtonsRow>
-              <Button to="/contacto">Solicitá tu cotización</Button>
+              <Button
+              to="/contacto">Solicitá tu cotización
+                <ArrowBigDownDash
+                size={48}
+                absoluteStrokeWidth={true}
+                />
+              </Button>
             </ButtonsRow>
           </Right>
         </SectionRight>

@@ -137,7 +137,7 @@ const AboutSection = () => {
 
             <ButtonsRow>
               <Button
-              to="/contacto">Solicitá tu cotización
+              to="/cotizaciones">SOLICITA TU COTIZACIÓN
                 <ArrowBigDownDash
                 size={48}
                 absoluteStrokeWidth={true}

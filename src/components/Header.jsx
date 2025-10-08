@@ -63,6 +63,18 @@ export const NavLink = styled(RouterLink)`
   }
 `;
 
+const ScrollLink = styled.span`
+  color: #6ec5e7;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #0077cc;
+  }
+`;
+
 const LinkModal = styled.span`
   display: block;
   cursor: pointer;
@@ -150,6 +162,13 @@ function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <HeaderContainer hidden={hidden} scrolled={scrolled}>
@@ -160,8 +179,10 @@ function Header() {
             </Logo>
           </RouterLink>
           <Nav>
-            <NavLink to="/limpieza-profesional">LIMPIEZA PROFESIONAL</NavLink>
-            <NavLink to="/planes">COTIZACIONES</NavLink>
+            
+            <ScrollLink onClick={() => scrollToSection("cotizaciones")}>
+              COTIZACIONES
+            </ScrollLink>
             <NavLink to="/nosotros">NOSOTROS</NavLink>
             <NavLink to="/cobertura">COBERTURA</NavLink>
             <LinkModal onClick={() => setIsModalOpen(true)}>
@@ -174,12 +195,14 @@ function Header() {
           </Burger>
         </ContainerBox>
         <MobileMenu open={menuOpen}>
-          <NavLink to="/limpieza-profesional" onClick={() => setMenuOpen(false)}>
-            LIMPIEZA PROFESIONAL
-          </NavLink>
-          <NavLink to="/planes" onClick={() => setMenuOpen(false)}>
-            PLANES
-          </NavLink>
+          <ScrollLink
+            onClick={() => {
+              scrollToSection("cotizaciones");
+              setMenuOpen(false);
+            }}
+          >
+            COTIZACIONES
+          </ScrollLink>
           <NavLink to="/nosotros" onClick={() => setMenuOpen(false)}>
             NOSOTROS
           </NavLink>

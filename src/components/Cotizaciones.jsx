@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
+import Burbujas from "../assets/burbujas.png"
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(20px); }
@@ -14,6 +15,7 @@ const Section = styled.section`
   flex-direction: column;
   align-items: center;
   animation: ${fadeIn} 0.8s ease forwards;
+
 `;
 
 const Title = styled.h2`
@@ -32,6 +34,7 @@ const Subtitle = styled.p`
 `;
 
 const FormContainer = styled.div`
+   
   background: #f8fcff;
   border: 2px solid #c6e0f5;
   border-radius: 12px;
@@ -39,6 +42,9 @@ const FormContainer = styled.div`
   max-width: 1000px;
   width: 100%;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+
+
 `;
 
 const SectionTitle = styled.h3`

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Gacman from "../assets/gac_man.png"
 import { ArrowBigDownDash } from "lucide-react";
 
 import { NavLink as RouterLink } from "react-router-dom";
@@ -8,12 +7,14 @@ import { NavLink as RouterLink } from "react-router-dom";
 // Contenedor general de la sección
 const Section = styled.section`
   width: 100%;
+  position: relative;
   padding: 3rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr; /* en mobile se apila */

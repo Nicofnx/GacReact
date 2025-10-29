@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "../components/Header";
+
 
 const Cobertura = () => {
   return (
-    <div style={{ padding: "2rem" }}>
+    <div style={{ padding: "8rem" }}>
         
         <h2>Cobertura</h2>
     </div>

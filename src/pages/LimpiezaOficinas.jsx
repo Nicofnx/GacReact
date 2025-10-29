@@ -6,16 +6,18 @@ import officeImg from "../assets/office.webp" // 👈 Ajustá la ruta de tu imag
 const PageWrapper = styled.div`
   max-width: 1280px;
   margin: auto;
-  padding: 60px 20px;
+  padding: 200px 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
 `
 
 const Image = styled.img`
+  margin: auto;
   flex: 1 1 400px;
   max-width: 500px;
   border-radius: 10px;
+  height:100%;
   object-fit: cover;
 `
 

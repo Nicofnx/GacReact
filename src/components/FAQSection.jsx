@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Plus, Minus } from "lucide-react";
 import FAQ from "../assets/faq.jpg"
 
+
 const Section = styled.section`
   max-width: 1200px;
   margin: auto;
@@ -28,6 +29,7 @@ const Image = styled.img`
 `;
 
 const FAQContainer = styled.div`
+  margin: auto 0;
   background-color: #e0f2fe;
   border-radius: 16px;
   padding: 40px;
@@ -95,15 +97,15 @@ function FAQSection() {
   const faqs = [
     {
       q: "¿El personal está en relación de dependencia con la empresa?",
-      a: "Sí, todos nuestros operarios están en relación de dependencia con Grupo Aldo Cleaning, cumpliendo con todas las normativas laborales vigentes.",
+      a: "Sí. Todo nuestro personal se encuentra en relación de dependencia directa con Grupo Aldo Cleaning SRL, cumpliendo con las normas laborales vigentes, seguros, ART y cobertura médica. Esto garantiza un servicio responsable y seguro.",
     },
     {
       q: "¿El personal asignado es siempre el mismo?",
-      a: "Priorizamos la continuidad del mismo equipo en cada servicio para mantener la confianza y la eficiencia en las tareas asignadas.",
+      a: "Nuestro objetivo es mantener la continuidad del equipo, ya que entendemos la importancia de la confianza y la familiaridad en cada espacio. Sin embargo, en caso de vacaciones, licencias o ausencias justificadas, contamos con personal de reemplazo.",
     },
     {
       q: "¿Qué sucede en caso de ausencia del personal?",
-      a: "Contamos con personal de respaldo para cubrir ausencias o licencias, garantizando que el servicio nunca se interrumpa.",
+      a: "Nos ocupamos de reemplazar al operario de forma inmediata, asegurando la continuidad del servicio.",
     },
     {
       q: "¿Los artículos de limpieza están incluidos?",
@@ -111,7 +113,7 @@ function FAQSection() {
     },
     {
       q: "¿Ofrecen presupuestos personalizados?",
-      a: "Sí, realizamos un relevamiento previo y adaptamos cada propuesta según las necesidades y tamaño del espacio a limpiar.",
+      a: "Por supuesto. Elaboramos presupuestos a medida, adaptados a las necesidades de cada cliente según el tipo de establecimiento, frecuencia del servicio, horario y superficie a limpiar, con un mínimo de 4 horas por día de lunes a viernes. También realizamos visitas técnicas sin costo para evaluar el espacio y definir la propuesta más conveniente.",
     },
   ];
 

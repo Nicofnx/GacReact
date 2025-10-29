@@ -150,6 +150,7 @@ function ModalCV({ isOpen, onClose }) {
     celular: "",
     edad: "",
     localidad: "",
+    direccion: "",
     puesto: "OPERARIO",
     mensaje: "",
     cv: null,
@@ -230,6 +231,15 @@ function ModalCV({ isOpen, onClose }) {
             type="text"
             name="localidad"
             value={formData.localidad}
+            onChange={handleChange}
+            required
+          />
+          
+          <Label>Dirección (calle y altura)</Label>
+          <Input
+            type="text"
+            name="direccion"
+            value={formData.nombre}
             onChange={handleChange}
             required
           />

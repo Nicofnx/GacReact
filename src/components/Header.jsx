@@ -16,7 +16,7 @@ const HeaderContainer = styled.header`
   text-align: center;
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
   transform: ${(props) => (props.hidden ? "translateY(-100%)" : "translateY(0)")};
-  z-index: 1000;
+  z-index: 3500;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,14 +65,16 @@ export const NavLink = styled(RouterLink)`
 `;
 
 const ScrollLink = styled.span`
-  color: #6ec5e7;
-  font-weight: 500;
+  background: #6ec5e7;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
   text-decoration: none;
-  cursor: pointer;
-  transition: color 0.2s;
+  font-weight: 600;
+  transition: background 0.2s;
 
   &:hover {
-    color: #0077cc;
+    background: #005fa3;
   }
 `;
 
@@ -130,7 +132,7 @@ const MobileMenu = styled.div`
   border-radius: 5px;
   flex-direction: column;
   gap: 20px;
-  z-index: 2000;
+  z-index: 4000;
 `;
 
 function Header() {
@@ -194,16 +196,14 @@ function Header() {
             </Logo>
           </RouterLink>
           <Nav>
-            
-            <ScrollLink as="a" href="#cotizaciones" onClick={handleCotizacionesClick}>
-              COTIZACIONES
-            </ScrollLink>
             <NavLink to="/nosotros">NOSOTROS</NavLink>
-            <NavLink to="/cobertura">COBERTURA</NavLink>
+            <NavLink to="/Contacto">CONTACTO</NavLink>
             <LinkModal onClick={() => setIsModalOpen(true)}>
               TRABAJA CON NOSOTROS
-            </LinkModal>
-            <Buttom to="/contacto">CONTACTO</Buttom>
+            </LinkModal>            
+            <ScrollLink as="a" href="#cotizaciones" onClick={handleCotizacionesClick}>
+                COTIZACIONES
+            </ScrollLink>            
           </Nav>
           <Burger onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <FaTimes /> : <FaBars />}
@@ -222,9 +222,6 @@ function Header() {
           </ScrollLink>
           <NavLink to="/nosotros" onClick={() => setMenuOpen(false)}>
             NOSOTROS
-          </NavLink>
-          <NavLink to="/cobertura" onClick={() => setMenuOpen(false)}>
-            COBERTURA
           </NavLink>
           <LinkModal
             onClick={() => {

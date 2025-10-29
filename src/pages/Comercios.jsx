@@ -6,7 +6,7 @@ import shoppingImg from "../assets/shopping.jpg"
 const PageWrapper = styled.div`
   max-width: 1280px;
   margin: auto;
-  padding: 60px 20px;
+  padding: 200px 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 40px;

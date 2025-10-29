@@ -5,7 +5,7 @@ import FondoChica from "../assets/Chica de Limpieza.png"
 const Section = styled.section`
   position: relative;
   background-color: #f9f9f9;
-  padding: 250px 20px;
+  padding: 200px 20px;
   overflow: hidden;
 
   &::before {
@@ -204,7 +204,6 @@ const Contacto = () => {
     empresa: "",
     celular: "",
     email: "",
-    servicio: "",
     mensaje: "",
   });
 
@@ -293,19 +292,6 @@ const Contacto = () => {
             onChange={handleChange}
             required
           />
-
-          <Select
-            name="servicio"
-            value={formData.servicio}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Seleccione un servicio</option>
-            <option value="Limpieza de oficinas">Limpieza de oficinas</option>
-            <option value="Limpieza industrial">Limpieza industrial</option>
-            <option value="Limpieza de obra">Limpieza de obra</option>
-            <option value="Limpieza de vidrios">Limpieza de vidrios</option>
-          </Select>
 
           <Textarea
             name="mensaje"

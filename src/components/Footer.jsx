@@ -4,6 +4,7 @@ import { FaWhatsapp, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"
 import gotaLogo from "../assets/logo-empresa-con nombre.png";
 
 const FooterWrapper = styled.footer`
+  position:relative;
   background: #0f3057;
   color: #fff;
   padding: 40px 20px 20px;

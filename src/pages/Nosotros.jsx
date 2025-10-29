@@ -2,25 +2,46 @@ import React from "react";
 import styled from "styled-components";
 import Gacman from "../assets/gac_man.png"
 import { Slide } from "react-awesome-reveal";
+import Valores from "../assets/valores.png"
 
 // Contenedor general de la sección
 
 const Section1colum = styled.section`
+  position: relative;
   width: 100%;
-  padding: 0rem 2rem 2rem 2rem;
+  padding: 2rem 2rem 2rem 2rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 20px auto;
+  overflow: visible;
 
-  li{
-    color:red
+  &::before {
+    content: "";
+    position: absolute;
+    
+    width: 130%; 
+    height: 140%;
+    
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background-repeat: no-repeat;
+    background-image: url(${Valores});
+    
+    background-position: center;
+    opacity: 0.1;
+    z-index: 0; 
   }
+
+  border-radius: 20px;
+
 `
 
 const Section2Colums = styled.section`
   width: 100%;
-  padding: 200px 1rem 100px 1rem;
+  padding: 200px 1rem 50px 1rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
@@ -32,6 +53,9 @@ const Section2Colums = styled.section`
   }
 `;
 
+const StyleSlide = styled(Slide)`
+  margin: auto;
+`
 
 // Columna de la izquierda (imagen)
 const Left = styled.div`
@@ -51,11 +75,13 @@ const Right = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin:auto;
+  
 `;
 
 const Title = styled.h2`
   color: #3586cb;
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   margin-bottom: 1rem;
 `;
 
@@ -68,12 +94,13 @@ const Paragraph = styled.p`
 
 const SubTitle = styled.h3`
   color: #3586cb;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
 `;
 
 const ContainerList = styled.div`
   display: flex;
+  
   
 `
 
@@ -83,7 +110,7 @@ const List = styled.ul`
   text-align: left;
   list-style: none;
   padding: 0;
-  margin: 0 0 2rem 0;
+  
   
   li {
     font-size: 1rem;
@@ -101,44 +128,22 @@ const List = styled.ul`
   }
 `;
 
-const ButtonsRow = styled.div`
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
 
-  @media (max-width: 768px) {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-`;
 
-const Button = styled.a`
-  background: #72c8e9;
-  color: white;
-  text-decoration: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background 0.3s ease;
-
-  &:hover {
-    background: #3586cb;
-  }
-`;
 
 const Nosotros = () => {
   return (
     <>
       <Section2Colums>
         {/* Columna izquierda */}
-        <Slide triggerOnce={true} direction="left">
+        <StyleSlide triggerOnce={true} direction="left">
           <Left>
             <img src={Gacman} alt="Limpieza profesional" />
           </Left>
-        </Slide>
+        </StyleSlide>
 
         {/* Columna derecha */}
-        <Slide triggerOnce={true} direction="right">
+        <StyleSlide triggerOnce={true} direction="right">
           <Right>
             <Title>Conocenos</Title>
             <Paragraph>
@@ -153,24 +158,23 @@ const Nosotros = () => {
             Ser reconocidos como la mejor empresa a nivel nacional por su eficiencia, honestidad, profesionalismo y calidad de servicio. Ofreciendo la mejor solución en el área de limpieza, con personal honrado y altamente capacitado, comprometidos con la mejora continua y con los objetivos e imagen de nuestros clientes.
             </Paragraph>
           </Right>
-        </Slide>
+        </StyleSlide>
       </Section2Colums>
       <Section1colum>
         <SubTitle>Nuestros Valores</SubTitle>
           <ContainerList>
             <List>
-              <li><b>Calidad:</b> en nuestro servicio, tenemos capacidad de respuesta a las exigencias del cliente agregando valor a nuestras tareas.</li>
-              <li><b>Transparencia:</b> somos respetuosos con las normas y leyes establecidas tanto por Grupo Aldo Cleaning, como por el cliente o las distintas organizaciones, que implican procedimientos honrados y totalmente claros que garanticen la legalidad de los mismos.</li>
-              <li><b>Honestidad:</b> nos gusta y creemos en la honestidad como uno de los pilares fundamentales que rigen todas las actividades de cualquier empresa. Nos comportamos y expresamos con coherencia y sinceridad de acuerdo con los valores de verdad y justicia.</li>
-              <li><b>Compromiso:</b> destacamos el valor del compromiso de cada integrante de la empresa con sus responsabilidades asumidas, creemos en el trabajo de cada uno y en su valor dentro de la empresa.</li>
-              <li><b>Rentabilidad:</b> sabemos que la rentabilidad es una responsabilidad primordial en cualquier empresa, por lo que gestionamos de manera efectiva los recursos para obtener resultados económicos que beneficien a Grupo Aldo Cleaning SRL y a todos sus miembros, garantizando la permanencia de la misma a través de los años.</li>
-              <li><b>Respeto:</b> es de suma importancia tener la capacidad de aceptar diferentes criterios y actitudes dentro de la filosofía de nuestra empresa, ya sea para nuestros compañeros como para la gente que se encuentra trabajando en las instalaciones.</li>
-              <li><b>Trabajo en equipo:</b> sabemos que somos un grupo de personas con diferentes capacidades complementarias, comprometidas con un propósito y un objetivo de trabajo, guiadas por un planeamiento común con responsabilidades compartidas.</li>
+              <li><b>Calidad:</b> Nos enfocamos en ofrecer un servicio de limpieza profesional, eficiente y adaptable a las necesidades de cada cliente, asegurando resultados visibles y sostenidos en el tiempo.</li>
+              <li><b>Transparencia:</b> Cumplimos con todas las normas legales y laborales vigentes, trabajando con procedimientos claros y documentación respaldatoria. Creemos que la confianza se construye con transparencia y coherencia en cada acción.</li>
+              <li><b>Honestidad:</b> Actuamos con integridad en todas nuestras relaciones. La honestidad guía nuestras decisiones, nuestra comunicación y la forma en que representamos a nuestros clientes.</li>
+              <li><b>Compromiso:</b> Nos comprometemos con la excelencia en cada tarea. Valoramos la responsabilidad individual y colectiva, y trabajamos con dedicación para superar las expectativas de quienes confían en nosotros.</li>
+              <li><b>Respeto:</b> Promovemos un ambiente laboral basado en el respeto mutuo, tanto entre nuestros colaboradores como hacia los espacios y personas donde brindamos servicio. Creemos que el respeto es la base de todo vínculo duradero.</li>
+              <li><b>Trabajo en equipo:</b> Sabemos que el éxito se logra trabajando juntos. Fomentamos la colaboración, la comunicación y la ayuda mutua entre nuestros equipos para garantizar resultados de calidad y un clima laboral positivo.</li>
+              <li><b>Sostenibilidad y crecimiento:</b> Buscamos la mejora continua de nuestros procesos, apostando a la innovación, la capacitación y el uso responsable de los recursos. Creemos en una empresa que crece junto a sus clientes y su equipo de trabajo.</li>
+
             </List>
           </ContainerList>
-          <ButtonsRow>
-            <Button href="tel:0232312341234">Contactanos</Button>
-          </ButtonsRow>
+
       </Section1colum>
     </>
 

@@ -36,10 +36,12 @@ const Subtitle = styled.h3`
 
 const CardGrid = styled.div`
   display: grid;
+  position: relative;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 25px;
   max-width: 1200px;
   margin: 0 auto;
+  z-index: 2500;
 
   @media (max-width: 768px) {
     grid-template-columns: 300px;
@@ -49,12 +51,12 @@ const CardGrid = styled.div`
 `;
 
 const Card = styled.div`
-  background: #ffffff;
+  background: #ffffff;  
   border-radius: 16px;
   padding: 40px 20px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #e2e8f0;  
 
   &:hover {
     transform: translateY(-6px);
@@ -114,6 +116,7 @@ function TipsBussine() {
       title: "Optimización de Costos",
       text: "Procesos eficientes que reducen gastos sin perder calidad.",
     },
+    
   ];
 
   return (
@@ -123,7 +126,7 @@ function TipsBussine() {
         En Grupo Aldo Cleaning cuidamos cada detalle para ofrecerte un servicio eficiente, confiable y profesional.
       </Subtitle>
       <CardGrid>
-        <Slide triggerOnce={true} direction="up" cascade damping={0.4}>
+        <Slide triggerOnce={true} direction="up" cascade damping={0.2}>
           {tips.map((tip, index) => (
             <Card key={index}>
               <IconWrapper>{tip.icon}</IconWrapper>

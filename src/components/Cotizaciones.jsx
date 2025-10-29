@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import Burbujas from "../assets/burbujas.png"
+import { TrendingUpIcon } from "lucide-react";
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(20px); }
@@ -86,8 +87,10 @@ const Input = styled.input`
   font-size: 1rem;
   outline: none;
   transition: border 0.3s ease;
+  text-align: ${(props) => (props.isCenter ? "center" : "left")};
   &:focus {
     border-color: #0f3057;
+    
   }
 `;
 
@@ -157,13 +160,16 @@ const DayButton = styled.button`
 `;
 
 export default function CotizacionSection() {
+  
   const [formData, setFormData] = useState({
     nombre: "",
     telefono: "",
     email: "",
+    direccion: "",
+    localidad: "",
     tipoServicio: "",
-    horas: "",
-    operarios: "",
+    horas: "4",
+    operarios: "1",
     materiales: "",
     maquinaria: "",
     vidrios: "",
@@ -237,6 +243,26 @@ export default function CotizacionSection() {
                 required
               />
             </Field>
+            <Field>
+              <Label>*Dirección</Label>
+              <Input
+                type="text"
+                name="direccion"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </Field>
+            <Field>
+              <Label>*Localidad</Label>
+              <Input
+                type="text"
+                name="localidad"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </Field>
           </FieldGroup>
 
           <SectionTitle>Detalle del servicio</SectionTitle>
@@ -246,8 +272,11 @@ export default function CotizacionSection() {
               <Label>Tipo de Servicio</Label>
               <Select name="tipoServicio" value={formData.tipoServicio} onChange={handleChange}>
                 <option value="">Seleccionar</option>
+                <option value="Oficinas">Final de obras</option>
+                <option value="Oficinas">Industrias y fábricas</option>
+                <option value="Oficinas">Establecimientos comerciales </option>
                 <option value="Oficinas">Oficinas</option>
-                <option value="Industria">Industria</option>
+                <option value="Industria">Depósitos</option>
                 <option value="Eventos">Eventos</option>
               </Select>
             </Field>
@@ -259,6 +288,8 @@ export default function CotizacionSection() {
                 name="horas"
                 value={formData.horas}
                 onChange={handleChange}
+                min="4"
+                isCenter={true}
               />
             </Field>
 
@@ -269,6 +300,8 @@ export default function CotizacionSection() {
                 name="operarios"
                 value={formData.operarios}
                 onChange={handleChange}
+                min="1"
+                isCenter={true}
               />
             </Field>
           </FieldGroup>
@@ -291,11 +324,11 @@ export default function CotizacionSection() {
 
           <FieldGroup>
             <Field>
-              <Label>Materiales</Label>
+              <Label>Insumos para limpieza</Label>
               <Select name="materiales" value={formData.materiales} onChange={handleChange}>
                 <option value="">Seleccionar</option>
-                <option value="Sin materiales">Servicio sin materiales</option>
-                <option value="Con materiales">Servicio con materiales</option>
+                <option value="Sin materiales">Servicio sin Insumos</option>
+                <option value="Con materiales">Servicio con Insumos</option>
               </Select>
             </Field>
 
@@ -323,7 +356,7 @@ export default function CotizacionSection() {
               <Label>Insumos de tocador</Label>
               <Select name="insumos" value={formData.insumos} onChange={handleChange}>
                 <option value="">No incluir</option>
-                <option value="Incluir">Incluir (papel, toallas, jabón)</option>
+                <option value="Incluir">Incluir (papel de manos, toallas intercadas, jabón liquido)</option>
               </Select>
             </Field>
           </FieldGroup>

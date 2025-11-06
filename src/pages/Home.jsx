@@ -11,7 +11,7 @@ import styled from "styled-components";
 import React, { useEffect } from "react";
 
 const MainContainer = styled.div`
-  padding: 110px 0 0 0;
+  padding: 0 0 0 0;
 `
 
 const Home = () => {

@@ -20,7 +20,7 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fff;
+  background: rgba(255,255,255,1);
   box-shadow: ${(props) =>
     props.scrolled ? "0 2px 8px rgba(0, 0, 0, 0.15)" : "none"};
   opacity: ${(props) => (props.hidden ? 0 : 1)};

@@ -9,6 +9,7 @@ import CotizacionSection from "../components/Cotizaciones";
 import styled from "styled-components";
 
 import React, { useEffect } from "react";
+import PorqueElegirnos from "../components/PorqueElegirnos";
 
 const MainContainer = styled.div`
   padding: 0 0 0 0;
@@ -33,12 +34,12 @@ const Home = () => {
   return (
     <MainContainer >
         <VisualPresentation/>
-        <TextCarousel/>
-        <TipsBussine/>
+        <PorqueElegirnos/>
+        <TextCarousel/>        
         <Cards/>
         <LogosCarousel/>
         <AboutSection/>
-        <CotizacionSection/>
+        <CotizacionSection/>        
         <FAQSection/>
     </MainContainer>
   );

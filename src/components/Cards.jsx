@@ -107,13 +107,13 @@ const CardButton = styled.button`
 const data = [
   {
     img: ObraEnd,
-    title: "Final de obras",
+    title: "Final de obra",
     desc: "Dejamos tu obra lista para usar, con espacios ordenados y prolijos.",
     path: "/finaldeobra",
   },
   {
     img: Industry,
-    title: "Industrias y fábricas",
+    title: "Industrias",
     desc: "Limpieza confiable, lista para cumplir y superar auditorías.",
     path: "/limpiezaindustrial",
   },
@@ -138,7 +138,7 @@ const data = [
   {
     img: Event,
     title: "Eventos",
-    desc: "Aseguramos el orden y la higiene a tus espacios, para que solo quede el buen recuerdo.",
+    desc: "Aseguramos el orden e higiene antes, durante y después.",
     path: "/eventos",
   },
 ];

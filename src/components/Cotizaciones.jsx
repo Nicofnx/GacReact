@@ -25,14 +25,9 @@ const Title = styled.h2`
   color: #0f3057;
   margin-bottom: 10px;
   text-align: center;
+  padding: 0 0 15px 0;
 `;
 
-const Subtitle = styled.p`
-  text-align: center;
-  color: #4b4b4b;
-  margin-bottom: 40px;
-  max-width: 600px;
-`;
 
 const FormContainer = styled.div`
    
@@ -171,7 +166,6 @@ export default function CotizacionSection() {
     horas: "4",
     operarios: "1",
     materiales: "",
-    maquinaria: "",
     vidrios: "",
     insumos: "",
     mensaje: "",
@@ -201,10 +195,9 @@ export default function CotizacionSection() {
 
   return (
     <Section id="cotizaciones">
-      <Title>Cotizaciones</Title>
-      <Subtitle>
+      <Title>
         Complete el siguiente formulario y le enviaremos a la brevedad la cotización solicitada.
-      </Subtitle>
+      </Title>
 
       <FormContainer>
         <SectionTitle>Datos de contacto</SectionTitle>
@@ -329,15 +322,6 @@ export default function CotizacionSection() {
                 <option value="">Seleccionar</option>
                 <option value="Sin materiales">Servicio sin Insumos</option>
                 <option value="Con materiales">Servicio con Insumos</option>
-              </Select>
-            </Field>
-
-            <Field>
-              <Label>Maquinaria</Label>
-              <Select name="maquinaria" value={formData.maquinaria} onChange={handleChange}>
-                <option value="">Seleccionar</option>
-                <option value="Sin maquinaria">Servicio sin maquinaria</option>
-                <option value="Con maquinaria">Servicio con maquinaria</option>
               </Select>
             </Field>
           </FieldGroup>

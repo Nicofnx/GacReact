@@ -46,20 +46,7 @@ const BoxText = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-left: 200px;
 
-  @media (max-width: 1280px) {
-    width: 90%;
-    padding-left: 100px;
-  }
-
-  @media (max-width: 768px) {
-    padding-left: 50px;
-  }
-
-  @media (max-width: 480px) {
-    padding-left: 20px;
-  }
 `;
 
 const SubText = styled(motion.p)`

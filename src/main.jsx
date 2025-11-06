@@ -1,15 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ThemeProvider } from 'styled-components';
-import { Theme } from "./styles/Theme";
+
 import "@fontsource/lato"
 
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ThemeProvider Theme={Theme}>
+    
       <App />
-    </ThemeProvider>    
+        
   </StrictMode>,
 )

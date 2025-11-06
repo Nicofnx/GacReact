@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Valores from "../assets/valores.png"; // cambia el nombre según tu imagen real
 import { ShieldCheck, UserCheck, Users2, ClipboardList, DollarSign } from "lucide-react";
 import { NavLink as RouterLink } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const Section = styled.section`
   background: #fff;
@@ -128,6 +129,16 @@ const NavLink = styled(RouterLink)`
 `;
 
 function PorqueElegirnos() {
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const handleResize = () => setIsMobile(window.innerWidth <= 768);
+      handleResize(); // detectar tamaño inicial
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
   return (
     <Section id="why-us">
       <Title>POR QUE ELEGIRNOS</Title>
@@ -153,9 +164,11 @@ function PorqueElegirnos() {
           </div>
         </InfoGroup>
 
-        <ImageCircle>
-          <img src={Valores} alt="simbolos de valores de la empresa" />
-        </ImageCircle>
+       {!isMobile && (
+          <ImageCircle>
+            <img src={Valores} alt="simbolos de valores de la empresa" />
+          </ImageCircle>
+        )}
 
         <InfoGroup>
           <div>
@@ -185,6 +198,11 @@ function PorqueElegirnos() {
           </div>
         </InfoGroup>
        </ContentDown>
+       {isMobile && (
+        <ImageCircle style={{ margin: "30px auto 0 auto" }}>
+          <img src={Valores} alt="simbolos de valores de la empresa" />
+        </ImageCircle>
+      )}
       <NavLink
         to="/nosotros"
       >

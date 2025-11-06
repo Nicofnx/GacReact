@@ -3,7 +3,7 @@ import FondoChica from "../assets/Chica de Limpieza.png";
 import { motion } from 'framer-motion';
 
 const Container = styled.section`
-  padding: 100px 0 0 0;
+  margin: 80px 0 0 0;
   position: relative;
   width: 100%;
   height: 800px;
@@ -16,16 +16,16 @@ const Container = styled.section`
   align-items: center;
 
   @media (max-width: 1024px) {
-    height: 500px;
+    height: 600px;
   }
 
   @media (max-width: 768px) {
-    height: 400px;
+    height: 500px;
     background-attachment: scroll;
   }
 
   @media (max-width: 480px) {
-    height: 300px;
+    height: 400px;
   }
 
   &::before {
@@ -127,8 +127,10 @@ const Button = styled(motion.button)`
   padding: 16px 30px;
   cursor: pointer;
   font-size: 16px;
+  text-decoration:none;
   border: 2px solid rgba(255, 255, 255, 0);
   transition: all 0.3s;
+
 
   &:hover {
     background: transparent;
@@ -151,7 +153,19 @@ const fadeInUp = {
   }),
 };
 
+
+
 function VisualPresentation() {
+
+  const handleCotizacionesClick = (e) => {
+    e.preventDefault();
+    const section = document.getElementById("cotizaciones");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+
   return (
     <Container>
       <BoxText>
@@ -159,7 +173,7 @@ function VisualPresentation() {
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
-          custom={0.3}
+          custom={0.8}
         >
           Servicio profesional de limpieza
         </SubText>
@@ -168,7 +182,7 @@ function VisualPresentation() {
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
-          custom={0.8}
+          custom={1.2}
         >
           NUESTRO EQUIPO ES NUESTRO
         </Title1>
@@ -177,16 +191,18 @@ function VisualPresentation() {
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
-          custom={1.3}
+          custom={1.7}
         >
           MEJOR RECURSO
         </Title2>
 
         <Button
+          href="#cotizaciones" onClick={handleCotizacionesClick}
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
-          custom={1.8}
+          custom={2}
+          
         >
           Solicitar presupuesto
         </Button>

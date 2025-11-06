@@ -105,7 +105,12 @@ export const Buttom = styled(RouterLink)`
 
 const GotaLogo = styled.img`
   width: 80px;
-  opacity: 0.8;
+  opacity: 1;
+
+  @media (max-width: 768px) {
+    width: 60px;
+    opacity: 0.9;
+  }
 `;
 
 const Burger = styled.div`
@@ -179,12 +184,7 @@ function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+
 
   return (
     <>
@@ -210,16 +210,7 @@ function Header() {
           </Burger>
         </ContainerBox>
         <MobileMenu open={menuOpen}>
-          <ScrollLink
-            as="a"
-            href="#cotizaciones"
-            onClick={(e) => {
-              handleCotizacionesClick(e);
-              setMenuOpen(false);
-            }}
-          >
-            COTIZACIONES
-          </ScrollLink>
+
           <NavLink to="/nosotros" onClick={() => setMenuOpen(false)}>
             NOSOTROS
           </NavLink>
@@ -231,9 +222,19 @@ function Header() {
           >
             TRABAJA CON NOSOTROS
           </LinkModal>
-          <Buttom to="/contacto" onClick={() => setMenuOpen(false)}>
+          <NavLink to="/Contacto" onClick={() => setMenuOpen(false)}>
             CONTACTO
-          </Buttom>
+          </NavLink>
+          <ScrollLink
+            as="a"
+            href="#cotizaciones"
+            onClick={(e) => {
+              handleCotizacionesClick(e);
+              setMenuOpen(false);
+            }}
+          >
+            COTIZACIONES
+          </ScrollLink>
           <CloseButtom onClick={() => setMenuOpen(false)} />
         </MobileMenu>
       </HeaderContainer>

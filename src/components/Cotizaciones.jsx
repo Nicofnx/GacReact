@@ -11,7 +11,7 @@ const fadeIn = keyframes`
 const Section = styled.section`
   background-color: #fff;
   color: #2e1a75;
-  padding: 80px 20px;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -170,6 +170,7 @@ export default function CotizacionSection() {
     insumos: "",
     mensaje: "",
     dias: [],
+    cantEmpleadosInsumos: "",
   });
 
   const diasSemana = ["Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"];
@@ -343,7 +344,21 @@ export default function CotizacionSection() {
                 <option value="Incluir">Incluir (papel de manos, toallas intercadas, jabón liquido)</option>
               </Select>
             </Field>
+            
           </FieldGroup>
+          {formData.insumos === "Incluir" && (
+            <Field>
+              <Label>Cantidad de empleados (para cálculo de insumos)</Label>
+              <Input
+                type="number"
+                name="cantEmpleadosInsumos"
+                value={formData.cantEmpleadosInsumos}
+                onChange={handleChange}
+                min="1"
+                isCenter={true}
+              />
+            </Field>
+          )}
 
           <Field>
             <Label>Mensaje adicional</Label>

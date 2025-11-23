@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import ScrollToHash from "./components/ScrollToHash";
 
 // Estilos globales
 import GlobalStyles from "./styles/GlobalStyles";
@@ -38,6 +39,7 @@ function App() {
     <Router>
       <GlobalStyles />
       <ScrollToTop />
+      <ScrollToHash />
 
       <Header />
 

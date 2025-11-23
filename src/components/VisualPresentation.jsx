@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import FondoChica from "../assets/portada2.jpeg";
+import FondoHome from "../assets/homegac.webp";
 import { motion } from 'framer-motion';
 
 const Container = styled.section`
@@ -7,13 +7,13 @@ const Container = styled.section`
   position: relative;
   width: 100%;
   height: 800px;
-  background-image: url(${FondoChica});
+  background-image: url(${FondoHome});
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center;
- 
+ background-attachment: fixed;
   display: flex;
-  align-items: center;
+  align-items: start;
 
   @media (max-width: 1024px) {
     height: 600px;
@@ -40,8 +40,10 @@ const Container = styled.section`
 const BoxText = styled.div`
   position: relative;
   z-index: 1;
+  margin: 60px auto 0 auto;
+  
   width: 1280px;
-  margin: auto;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;

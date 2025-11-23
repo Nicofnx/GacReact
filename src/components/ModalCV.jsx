@@ -20,7 +20,7 @@ const Overlay = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1500;
+  z-index: 3500;
   opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
   visibility: ${({ isOpen }) => (isOpen ? "visible" : "hidden")};
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -32,7 +32,7 @@ const ModalContainer = styled.div`
   border-radius: 8px;
   width: 400px;
   max-width: 100%;
-  max-height: 95vh;
+  max-height: 90vh;
   overflow-y: auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   display: flex;

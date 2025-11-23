@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import FondoChica from "../assets/Chica de Limpieza.png";
+import FondoChica from "../assets/portada2.jpeg";
 import { motion } from 'framer-motion';
 
 const Container = styled.section`
@@ -9,9 +9,9 @@ const Container = styled.section`
   height: 800px;
   background-image: url(${FondoChica});
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
   background-position: center;
-  background-attachment: fixed;
+ 
   display: flex;
   align-items: center;
 
@@ -32,7 +32,7 @@ const Container = styled.section`
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0);
     z-index: 0;
   }
 `;
